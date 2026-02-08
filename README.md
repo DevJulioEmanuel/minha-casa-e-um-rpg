@@ -2,6 +2,8 @@
 
 **Arthur Lelis, Julio Emanuel**
 
+[PROJETO EM DESENVOLVIMENTO]
+
 ---
 
 ## 1. Visão Geral do Projeto
