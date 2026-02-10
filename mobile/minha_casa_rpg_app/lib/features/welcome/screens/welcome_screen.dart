@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_welcome.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/titulo_welcome.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -17,14 +18,41 @@ class WelcomeScreen extends StatelessWidget {
           Positioned.fill(
             child: SafeArea(child: 
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      SizedBox(height: 30),
-                      TituloWelcome(texto: "MINHA CASA É UM RPG")
-                    ],
-                  ),
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Column(
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                    TituloWelcome(texto: "MINHA CASA É UM RPG"),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.34),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(246, 34, 62, 82),
+                          borderRadius: BorderRadius.circular(20.0) 
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            spacing: 20,
+                            children: [
+                              Text(
+                                "Transforme tarefas e contas da república em uma aventura divertida, com XP, níveis e recompensas.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18.0,
+                  
+                                ),
+                                ),
+                              ButtomWelcome(texto: "Entrar"),
+                              ButtomWelcome(texto: "Cadastrar"),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               )
             )
