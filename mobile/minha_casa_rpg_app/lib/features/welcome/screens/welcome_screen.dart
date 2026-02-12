@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_welcome.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/titulo_welcome.dart';
 
@@ -21,9 +22,9 @@ class WelcomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Column(
                   children: [
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.08),
                     TituloWelcome(texto: "MINHA CASA É UM RPG", size: 40.0),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.34),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.32),
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
@@ -44,8 +45,8 @@ class WelcomeScreen extends StatelessWidget {
                                   fontSize: 18.0,
                                 ),
                                 ),
-                              ButtomWelcome(texto: "Entrar", function: () {} ),
-                              ButtomWelcome(texto: "Cadastrar", function: () {}),
+                              ButtomWelcome(texto: "Entrar", function: () => context.push('/welcome/login')),
+                              ButtomWelcome(texto: "Cadastrar", function: () => context.push('/welcome/cadastro')),
                             ],
                           ),
                         ),

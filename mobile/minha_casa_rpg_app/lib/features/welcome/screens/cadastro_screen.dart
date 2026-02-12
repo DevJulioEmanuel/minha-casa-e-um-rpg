@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_google.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_welcome.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/textfield_welcome.dart';
@@ -67,7 +68,18 @@ class _CadastroScreenState extends State<CadastroScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Column(
                     children: [
-                      SizedBox(height: heightScreen * 0.05),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          onPressed: () => context.pop(), 
+                          icon: Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                            size: 40.0,
+                            )
+                          ),
+                      ),
+                      SizedBox(height: heightScreen * 0.01),
                       TituloWelcome(texto: "BEM VINDO DE VOLTA GUERREIRO!", size: 35.0,),
                       SizedBox(height: heightScreen * 0.10),
                       Align(

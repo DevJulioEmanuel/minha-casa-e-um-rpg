@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/welcome/screens/cadastro_screen.dart';
-import 'package:minha_casa_rpg_app/features/welcome/screens/login_screen.dart';
-import 'features/welcome/screens/welcome_screen.dart';
+import 'package:minha_casa_rpg_app/navigation/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Minha Casa RPG',
       theme: ThemeData(
@@ -33,7 +31,7 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      home: const WelcomeScreen(),
+      routerConfig: routes,
     );
   }
 }
