@@ -3,40 +3,55 @@ import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_google.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_welcome.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/textfield_welcome.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/titulo_welcome.dart';
-import 'package:flutter/gestures.dart';
 
 
 class CadastroScreen extends StatefulWidget {
   const CadastroScreen({super.key});
 
   @override
-  State<CadastroScreen> createState() => _LoginScreenState();
+  State<CadastroScreen> createState() => _CadastroScreenState();
 }
 
-class _LoginScreenState extends State<CadastroScreen> {
+class _CadastroScreenState extends State<CadastroScreen> {
   final _formKey = GlobalKey<FormState>();
   final nomeController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmController = TextEditingController();
   
   @override
   void dispose() {
+    nomeController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    confirmController.dispose();
     super.dispose();
   }
 
-  void submit() {
+  void cadastrarSubmit() {
     if (_formKey.currentState!.validate()) {
+      final nome = nomeController.text;
       final email = emailController.text;
       final password = passwordController.text;
-      print(email);
-      print(password);
+      final confirm = confirmController.text;
+      debugPrint(nome);
+      debugPrint(email);
+      debugPrint(password);
+      debugPrint(confirm);
     }
+  }
+
+  void googleSubmit() {
+    debugPrint("Entrar com Google!");
+  }
+
+  void recuperarSubmit() {
+    debugPrint("Recuperar senha!");
   }
 
   @override
   Widget build(BuildContext context) {
+    final heightScreen = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(
         children: [
@@ -52,9 +67,9 @@ class _LoginScreenState extends State<CadastroScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Column(
                     children: [
-                      SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                      SizedBox(height: heightScreen * 0.05),
                       TituloWelcome(texto: "BEM VINDO DE VOLTA GUERREIRO!", size: 35.0,),
-                      SizedBox(height: MediaQuery.of(context).size.height * 0.25),
+                      SizedBox(height: heightScreen * 0.10),
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
@@ -67,49 +82,63 @@ class _LoginScreenState extends State<CadastroScreen> {
                             child: Column(
                               spacing: 25,
                               children: [
-                                TextfieldWelcome(
+                                Form(
                                   key: _formKey,
-                                  label: "E-mail",
-                                  controller: emailController,
-                                  keyboardType: TextInputType.emailAddress,
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return "Digite o seu e-mail";
-                                    } 
-                                    if (!value.contains("@")) {
-                                      return "E-mail inválido";
-                                    }
-                                    return null;
-                                  },
-                                ),
-                                TextfieldWelcome(
-                                  key: _formKey,
-                                  label: "Senha",
-                                  controller: passwordController,
-                                  obscureText: true,
-                                  validator: (value) {
-                                    if (value == null || value.length < 6) {
-                                      return "Senha muito curta";
-                                    }
-                                    return null;
-                                  },
-                                ),
-                                ButtomWelcome(texto: "Entrar", function: submit),
-                                ButtomGoogle(texto: "Entrar com Google", function: () {}),
-                                RichText(
-                                  text: TextSpan(
-                                    style: DefaultTextStyle.of(context).style,
+                                  child: Column(
+                                    spacing: 20,
                                     children: [
-                                      const TextSpan(
-                                        text: "Esqueceu sua senha?"
+                                      TextfieldWelcome(
+                                        label: "Nome",
+                                        controller: nomeController,
+                                        keyboardType: TextInputType.name,
+                                        validator: (value) {
+                                          if (value == null || value.isEmpty) {
+                                            return "Digite o seu nome";
+                                          }
+                                          return null;
+                                        },
                                       ),
-                                      TextSpan(
-                                        text: "Recuperar",
-                                        recognizer: TapGestureRecognizer()..onTap = () {}
-                                      )
-                                    ]
-                                  ) 
-                                )
+                                      TextfieldWelcome(
+                                        label: "E-mail",
+                                        controller: emailController,
+                                        keyboardType: TextInputType.emailAddress,
+                                        validator: (value) {
+                                          if (value == null || value.isEmpty) {
+                                            return "Digite o seu e-mail";
+                                          } 
+                                          if (!value.contains("@")) {
+                                            return "E-mail inválido";
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      TextfieldWelcome(
+                                        label: "Senha",
+                                        controller: passwordController,
+                                        obscureText: true,
+                                        validator: (value) {
+                                          if (value == null || value.length < 6) {
+                                            return "Senha muito curta";
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      TextfieldWelcome(
+                                        label: "Confirmação",
+                                        controller: confirmController,
+                                        obscureText: true,
+                                        validator: (value) {
+                                          if (value == null || value.length < 6) {
+                                            return "Senha muito curta";
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                ButtomWelcome(texto: "Cadastrar", function: cadastrarSubmit),
+                                ButtomGoogle(texto: "Entrar com Google", function: googleSubmit),
                               ],
                             ),
                           ),

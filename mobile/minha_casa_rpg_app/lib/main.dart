@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minha_casa_rpg_app/features/welcome/screens/cadastro_screen.dart';
 import 'package:minha_casa_rpg_app/features/welcome/screens/login_screen.dart';
 import 'features/welcome/screens/welcome_screen.dart';
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      home: const LoginScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

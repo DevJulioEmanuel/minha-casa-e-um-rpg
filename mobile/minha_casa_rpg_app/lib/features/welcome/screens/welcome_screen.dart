@@ -32,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20.0) 
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.all(24.0),
                           child: Column(
                             spacing: 20,
                             children: [
@@ -42,7 +42,6 @@ class WelcomeScreen extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18.0,
-                  
                                 ),
                                 ),
                               ButtomWelcome(texto: "Entrar", function: () {} ),
