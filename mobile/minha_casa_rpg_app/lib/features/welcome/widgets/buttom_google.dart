@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ButtomWelcome extends StatelessWidget {
+class ButtomGoogle extends StatelessWidget {
   final String texto;
   final VoidCallback function;
 
-  const ButtomWelcome({
+  const ButtomGoogle({
     super.key,
     required this.texto,
     required this.function
@@ -15,19 +15,25 @@ class ButtomWelcome extends StatelessWidget {
     return ElevatedButton(
       onPressed: function, 
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color(0xff60A7CD),
+        backgroundColor: Colors.white,
         minimumSize: Size(500, 60),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8)
         ),
         elevation: 5
       ),
-      child: Text(
-        texto,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20
-        ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Image.asset("lib/assets/images/google_image.png"),
+          Text(
+            texto,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 20
+            ),
+          ),
+        ],
       )
     );
   }

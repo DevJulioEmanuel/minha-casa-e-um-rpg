@@ -22,7 +22,7 @@ class WelcomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-                    TituloWelcome(texto: "MINHA CASA É UM RPG"),
+                    TituloWelcome(texto: "MINHA CASA É UM RPG", size: 40.0),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.34),
                     Align(
                       alignment: Alignment.bottomCenter,
@@ -45,8 +45,8 @@ class WelcomeScreen extends StatelessWidget {
                   
                                 ),
                                 ),
-                              ButtomWelcome(texto: "Entrar"),
-                              ButtomWelcome(texto: "Cadastrar"),
+                              ButtomWelcome(texto: "Entrar", function: () {} ),
+                              ButtomWelcome(texto: "Cadastrar", function: () {}),
                             ],
                           ),
                         ),
