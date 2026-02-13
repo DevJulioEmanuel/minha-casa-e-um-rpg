@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:minha_casa_rpg_app/features/welcome/viewmodels/controllers/auth_controller.dart';
+import 'package:minha_casa_rpg_app/features/welcome/providers/auth_controller.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_google.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_welcome.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/textfield_welcome.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:minha_casa_rpg_app/features/welcome/viewmodels/models/user_model.dart';
-import 'package:minha_casa_rpg_app/features/welcome/viewmodels/repository/auth_repository.dart';
-import 'package:minha_casa_rpg_app/features/welcome/viewmodels/repository/fake_auth_repository.dart';
+import 'package:minha_casa_rpg_app/features/welcome/data/models/user_model.dart';
+import 'package:minha_casa_rpg_app/features/welcome/data/repository/auth_repository.dart';
+import 'package:minha_casa_rpg_app/features/welcome/data/repository/fake_auth_repository.dart';
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
   return FakeAuthRepository();
