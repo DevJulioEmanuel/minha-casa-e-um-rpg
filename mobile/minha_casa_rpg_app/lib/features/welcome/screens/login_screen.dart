@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:minha_casa_rpg_app/features/welcome/viewmodels/controllers/auth_controller.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_google.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_welcome.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/textfield_welcome.dart';
@@ -7,14 +9,14 @@ import 'package:minha_casa_rpg_app/features/welcome/widgets/titulo_welcome.dart'
 import 'package:flutter/gestures.dart';
 
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  ConsumerState<LoginScreen> createState() => _LoginScreenState(); 
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -26,12 +28,13 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  void entrarSubmit() {
+  Future<void> entrarSubmit() async {
     if (_formKey.currentState!.validate()) {
       final email = emailController.text;
       final password = passwordController.text;
-      debugPrint(email);
-      debugPrint(password);
+      await ref 
+        .read(authControllerProvider.notifier)
+        .login(email, password);
     }
   }
 
@@ -45,7 +48,23 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final authState = ref.watch(authControllerProvider);
     final heightScreen = MediaQuery.of(context).size.height;
+
+    ref.listen(authControllerProvider, (previous, next) {
+      next.whenOrNull(
+        data: (user) {
+          if (user!=null) {
+            context.go('/republica');
+          }
+        },
+        error: (error, stack) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(error.toString()))
+          );
+        }
+      );
+    });
     return Scaffold(
       body: Stack(
         children: [
@@ -120,7 +139,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ],
                                   ),
                                 ),
-                                ButtomWelcome(texto: "Entrar", function: entrarSubmit),
+                                ButtomWelcome(
+                                  texto: authState.isLoading? "Carregando" : "Entrar",
+                                  function: authState.isLoading? () {} : entrarSubmit
+                                ),
                                 ButtomGoogle(texto: "Entrar com Google", function: googleSubmit),
                                 RichText(
                                   text: TextSpan(

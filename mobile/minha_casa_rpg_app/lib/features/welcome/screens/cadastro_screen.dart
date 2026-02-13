@@ -80,7 +80,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
                           ),
                       ),
                       SizedBox(height: heightScreen * 0.01),
-                      TituloWelcome(texto: "BEM VINDO DE VOLTA GUERREIRO!", size: 35.0,),
+                      TituloWelcome(texto: "BEM VINDO GUERREIRO!", size: 35.0,),
                       SizedBox(height: heightScreen * 0.10),
                       Align(
                         alignment: Alignment.bottomCenter,
