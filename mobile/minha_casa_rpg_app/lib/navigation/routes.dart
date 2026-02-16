@@ -1,10 +1,11 @@
 import 'package:go_router/go_router.dart';
+import 'package:minha_casa_rpg_app/features/republica/screens/republica_screen.dart';
 import 'package:minha_casa_rpg_app/features/welcome/screens/cadastro_screen.dart';
 import 'package:minha_casa_rpg_app/features/welcome/screens/login_screen.dart';
 import 'package:minha_casa_rpg_app/features/welcome/screens/welcome_screen.dart';
 
 final routes = GoRouter(
-  initialLocation: '/welcome',
+  initialLocation: '/republica',
   routes: [
     GoRoute(
       path: '/welcome',
@@ -20,5 +21,9 @@ final routes = GoRouter(
         ),
       ]
     ),
+    GoRoute(
+      path: '/republica',
+      builder: (context, state) => RepublicaScreen()
+    )
   ]
 );

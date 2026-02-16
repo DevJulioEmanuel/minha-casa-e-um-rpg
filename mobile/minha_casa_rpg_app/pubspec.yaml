@@ -27,17 +27,17 @@ flutter:
   uses-material-design: true
 
   assets:
-     - lib/assets/images/
+     - assets/images/
 
   fonts:
     - family: Cinzel
       fonts:
-        - asset: lib/assets/fonts/Cinzel/static/Cinzel-Bold.ttf
+        - asset: assets/fonts/Cinzel/static/Cinzel-Bold.ttf
 
     - family: Cinzel_Decorative
       fonts:
-        - asset: lib/assets/fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf
+        - asset: assets/fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf
           weight: 400
-        - asset: lib/assets/fonts/Cinzel_Decorative/CinzelDecorative-Bold.ttf
+        - asset: assets/fonts/Cinzel_Decorative/CinzelDecorative-Bold.ttf
           weight: 700
 

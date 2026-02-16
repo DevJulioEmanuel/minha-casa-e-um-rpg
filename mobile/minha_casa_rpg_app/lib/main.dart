@@ -28,12 +28,29 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.w700,
             color: Color(0xFF153968)
           ),
+          titleLarge: TextStyle(
+            fontFamily: 'Cinzel',
+            fontSize: 45,
+            fontWeight: FontWeight.w700,
+            color: Color(0xFF153968)
+          ),
           bodySmall: TextStyle(
             fontSize: 12
           ),
           bodyMedium: TextStyle(
             fontSize: 16
           )
+        ),
+        colorScheme: const ColorScheme.light(
+          //brightness: brightness, 
+          primary: Color(0xff60A7CD), 
+          //onPrimary: onPrimary, 
+          //secondary: secondary, 
+          //onSecondary: onSecondary, 
+          //error: error, 
+          //onError: onError, 
+          //surface: surface, 
+          //onSurface: onSurface
         )
       ),
       routerConfig: routes,
