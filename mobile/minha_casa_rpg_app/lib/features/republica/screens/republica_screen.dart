@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/features/republica/data/atividades_modelfake.dart';
 import 'package:minha_casa_rpg_app/features/republica/data/usuario_modelfake.dart';
@@ -82,7 +80,7 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset('assets/images/background_nuvens.png',
+            child: Image.asset('assets/images/background_nuvens2.png',
             fit: BoxFit.cover,
             ) 
           ),

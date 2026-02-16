@@ -17,7 +17,7 @@ class CardRanking extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
       child: Row(
         children: [
           Material(
@@ -32,7 +32,7 @@ class CardRanking extends StatelessWidget {
               fit: BoxFit.fill,
             ),
           ),
-          SizedBox(width: scaleImage*8),
+          SizedBox(width: scaleImage*15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,

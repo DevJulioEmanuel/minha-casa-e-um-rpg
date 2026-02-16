@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/navigation/routes.dart';
+import 'package:flutter/services.dart';
+
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.white,
+      systemNavigationBarIconBrightness: Brightness.dark, 
+      statusBarColor: Colors.transparent, // Topo
+      statusBarIconBrightness: Brightness.light,
+    ),
+  );
   runApp(
     ProviderScope(
       child: const MyApp()

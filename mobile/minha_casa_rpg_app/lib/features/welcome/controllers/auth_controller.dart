@@ -27,9 +27,6 @@ class AuthController extends AsyncNotifier<User?> {
       return user;
     }); 
 
-    Future<void> logout() async {
-      await _repository.logout();
-      state = const AsyncData(null);
-    }
+    
   }
 } 
