@@ -8,6 +8,7 @@ import 'package:minha_casa_rpg_app/features/republica/widgets/pixel_sprite.dart'
 import 'package:minha_casa_rpg_app/features/republica/widgets/stats_icons.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/titulo_republica.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/titulo_secao.dart';
+import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 
 class RepublicaScreen extends ConsumerStatefulWidget{
   const RepublicaScreen({super.key});
@@ -76,6 +77,9 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
     final scaleBigSprite = widthScreen*0.014;
     final scaleSmallSprite = widthScreen*0.003;
 
+    final l10n = AppLocalizations.of(context)!;
+
+
     return Scaffold(
       body: Stack(
         children: [
@@ -96,8 +100,7 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                           // TITULO DA REPUBLICA
                           SizedBox(height: heightScreen*0.025),
                           TituloRepublica(nomeRepublica: 'Nerds'),
-                                    
-                                    
+                                   
                           // STATS DO USUARIO  
                           Divider(
                             color: Theme.of(context).colorScheme.primary,
@@ -141,7 +144,7 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
 
                           //SEÇÃO ATIVIDADES ->
                           
-                          TituloSecao(texto: "ATIVIDADES"),
+                          TituloSecao(texto: l10n.republicaAtividadesTitle),
                           SizedBox(height: heightScreen*0.01),
                         ]
                       )
@@ -169,7 +172,7 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                             indent: widthScreen*0.03,
                             endIndent: widthScreen*0.03
                           ),
-                          TituloSecao(texto: "RANKING"),
+                          TituloSecao(texto: l10n.republicaRankingTitle),
                           SizedBox(height: heightScreen*0.01),
                         ]
                       ),

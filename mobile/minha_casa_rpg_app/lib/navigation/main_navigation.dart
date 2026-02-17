@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 
 class MainNavigation extends StatelessWidget {
   final Widget child;
@@ -22,6 +23,7 @@ class MainNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       body: child,
       bottomNavigationBar: BottomNavigationBar(
@@ -32,10 +34,8 @@ class MainNavigation extends StatelessWidget {
         unselectedItemColor: Theme.of(context).colorScheme.primary,
         selectedFontSize: 14,
         unselectedFontSize: 12,
-        type: BottomNavigationBarType.shifting,
-        
-
-
+        type: BottomNavigationBarType.fixed,
+       
         currentIndex: _calculateIndex(context),
         onTap: (index) {
           switch (index) {
@@ -56,26 +56,26 @@ class MainNavigation extends StatelessWidget {
               break;
           }
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.house),
-            label: 'Republica'
+            label: l10n.navHome
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.checklist_rtl),
-            label: 'Tarefas'
+            label: l10n.navTasks
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.monetization_on),
-            label: 'Despesas'
+            label: l10n.navExpenses
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
-            label: 'Loja'
+            label: l10n.navShop
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Perfil'
+            label: l10n.navProfile
           ),
         ],
       ),

@@ -9,8 +9,10 @@
       "dependencies": [
         "cupertino_icons",
         "flutter",
+        "flutter_localizations",
         "flutter_riverpod",
         "go_router",
+        "intl",
         "riverpod_annotation"
       ],
       "devDependencies": [
@@ -79,6 +81,24 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "intl",
+      "version": "0.20.2",
+      "dependencies": [
+        "clock",
+        "meta",
+        "path"
+      ]
+    },
+    {
+      "name": "flutter_localizations",
+      "version": "0.0.0",
+      "dependencies": [
+        "flutter",
+        "intl",
+        "path"
       ]
     },
     {
