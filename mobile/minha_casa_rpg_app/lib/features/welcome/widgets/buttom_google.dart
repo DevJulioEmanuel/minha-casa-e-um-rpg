@@ -25,7 +25,7 @@ class ButtomGoogle extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Image.asset("lib/assets/images/google_image.png"),
+          Image.asset("assets/images/google_image.png"),
           Text(
             texto,
             style: TextStyle(

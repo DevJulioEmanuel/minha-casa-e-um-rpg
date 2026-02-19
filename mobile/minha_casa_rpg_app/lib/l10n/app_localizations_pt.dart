@@ -9,13 +9,13 @@ class AppLocalizationsPt extends AppLocalizations {
   AppLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
-  String get republicaRepublicaTitle => 'A Republica';
+  String get republicaRepublicaTitle => 'A REPUBLICA';
 
   @override
-  String get republicaAtividadesTitle => 'Atividades';
+  String get republicaAtividadesTitle => 'ATIVIDADES';
 
   @override
-  String get republicaRankingTitle => 'Ranking';
+  String get republicaRankingTitle => 'RANKING';
 
   @override
   String get navHome => 'República';
@@ -31,4 +31,19 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get navProfile => 'Perfil';
+
+  @override
+  String get tarefasTitle => 'TAREFAS';
+
+  @override
+  String get tarefasButtomNovaTarefa => '+ NOVA TAREFA';
+
+  @override
+  String get tarefasFiltroPendentes => 'PENDENTES';
+
+  @override
+  String get tarefasFiltroAtrasadas => 'ATRASADAS';
+
+  @override
+  String get tarefasFiltroConcluidas => 'CONCLUIDAS';
 }

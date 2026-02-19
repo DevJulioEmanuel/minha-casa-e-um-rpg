@@ -103,19 +103,19 @@ abstract class AppLocalizations {
   /// No description provided for @republicaRepublicaTitle.
   ///
   /// In pt, this message translates to:
-  /// **'A Republica'**
+  /// **'A REPUBLICA'**
   String get republicaRepublicaTitle;
 
   /// No description provided for @republicaAtividadesTitle.
   ///
   /// In pt, this message translates to:
-  /// **'Atividades'**
+  /// **'ATIVIDADES'**
   String get republicaAtividadesTitle;
 
   /// No description provided for @republicaRankingTitle.
   ///
   /// In pt, this message translates to:
-  /// **'Ranking'**
+  /// **'RANKING'**
   String get republicaRankingTitle;
 
   /// No description provided for @navHome.
@@ -147,6 +147,36 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Perfil'**
   String get navProfile;
+
+  /// No description provided for @tarefasTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'TAREFAS'**
+  String get tarefasTitle;
+
+  /// No description provided for @tarefasButtomNovaTarefa.
+  ///
+  /// In pt, this message translates to:
+  /// **'+ NOVA TAREFA'**
+  String get tarefasButtomNovaTarefa;
+
+  /// No description provided for @tarefasFiltroPendentes.
+  ///
+  /// In pt, this message translates to:
+  /// **'PENDENTES'**
+  String get tarefasFiltroPendentes;
+
+  /// No description provided for @tarefasFiltroAtrasadas.
+  ///
+  /// In pt, this message translates to:
+  /// **'ATRASADAS'**
+  String get tarefasFiltroAtrasadas;
+
+  /// No description provided for @tarefasFiltroConcluidas.
+  ///
+  /// In pt, this message translates to:
+  /// **'CONCLUIDAS'**
+  String get tarefasFiltroConcluidas;
 }
 
 class _AppLocalizationsDelegate

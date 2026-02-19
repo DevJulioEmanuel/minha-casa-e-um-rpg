@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/atividades_modelfake.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/usuario_modelfake.dart';
+import 'package:minha_casa_rpg_app/features/republica/data/bd_fake.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/card_atividade.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/card_ranking.dart';
+import 'package:minha_casa_rpg_app/features/republica/widgets/divider_screens.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/pixel_sprite.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/stats_icons.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/titulo_republica.dart';
@@ -19,57 +19,6 @@ class RepublicaScreen extends ConsumerStatefulWidget{
 
 class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
 
-  final atividades = [
-  AtividadesModelFake(
-    pathImage: 'assets/images/meu_avatar.png',
-    texto: 'Julio Emanuel lavou a louça da república.',
-    corUsuario: Color(0xfff5FA7CD).value,
-  ),
-  AtividadesModelFake(
-    pathImage: 'assets/images/meu_avatar2.png',
-    texto: 'Arthur comprou a água',
-    corUsuario: Color(0xFFA58FCE).value, 
-  ),
-  AtividadesModelFake(
-    pathImage: 'assets/images/meu_avatar3.png',
-    texto: 'Kratos levou o lixo pra lixeira ',
-    corUsuario: const Color(0xFF77B882).value,
-  ),
-  AtividadesModelFake(
-    pathImage: 'assets/images/meu_avatar4.png',
-    texto: 'Atreus da Silva organizou a limpeza do sábado.',
-    corUsuario: Color(0xFFF3E8A8).value, 
-  ),
-  AtividadesModelFake(
-    pathImage: 'assets/images/meu_avatar2.png',
-    texto: 'Arthur Lelis fez o café para todo mundo de manhã.',
-    corUsuario: Color.fromARGB(255, 165, 143, 206).value,  
-  ),
-];
-
-  final usuarios = [
-    UsuarioModelfake(
-      nomeUsuario: "Julio Emanuel",
-      xp: 3500,
-      pathImage: 'assets/images/meu_avatar.png',
-    ),
-    UsuarioModelfake(
-      nomeUsuario: "Arthur Lellis",
-      xp: 2300,
-      pathImage: 'assets/images/meu_avatar2.png',
-    ),
-    UsuarioModelfake(
-      nomeUsuario: "Kratos",
-      xp: 500,
-      pathImage: 'assets/images/meu_avatar3.png',
-    ),
-    UsuarioModelfake(
-      nomeUsuario: "Atreus da Silva",
-      xp: 25,
-      pathImage: 'assets/images/meu_avatar4.png',
-    )
-  ];
-
   @override
   Widget build(BuildContext context) {
     final heightScreen = MediaQuery.of(context).size.height;
@@ -78,7 +27,6 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
     final scaleSmallSprite = widthScreen*0.003;
 
     final l10n = AppLocalizations.of(context)!;
-
 
     return Scaffold(
       body: Stack(
@@ -102,12 +50,7 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                           TituloRepublica(nomeRepublica: 'Nerds'),
                                    
                           // STATS DO USUARIO  
-                          Divider(
-                            color: Theme.of(context).colorScheme.primary,
-                            height: heightScreen*0.03,
-                            indent: widthScreen*0.03,
-                            endIndent: widthScreen*0.03
-                          ),
+                          DividerScreens(heightScreen: heightScreen, widthScreen: widthScreen),
                           SizedBox(height: heightScreen*0.005),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: (widthScreen*0.05)),
@@ -135,12 +78,7 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                             )
                           ),
                           SizedBox(height: heightScreen*0.02),
-                          Divider(
-                            color: Theme.of(context).colorScheme.primary,
-                            height: heightScreen*0.03,
-                            indent: widthScreen*0.03,
-                            endIndent: widthScreen*0.03
-                          ),
+                          DividerScreens(heightScreen: heightScreen, widthScreen: widthScreen),
 
                           //SEÇÃO ATIVIDADES ->
                           
@@ -154,24 +92,20 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                         (context, index) {
                           final atividade = atividades[index];
                           return CardAtividade(
-                            path: atividade.pathImage,
+                            path: atividade.usuario.pathImage,
                             texto: atividade.texto, 
-                            corUsuario: Color(atividade.corUsuario),
+                            corUsuario: Color(atividade.usuario.corUsuario),
                             scaleImage: scaleSmallSprite,
                           );
                         },
                         childCount: atividades.length
-                    )),
+                      )
+                    ),
                     SliverToBoxAdapter(
                       child: Column(
                         children: [
                           SizedBox(height: heightScreen*0.020),
-                          Divider(
-                            color: Theme.of(context).colorScheme.primary,
-                            height: heightScreen*0.03,
-                            indent: widthScreen*0.03,
-                            endIndent: widthScreen*0.03
-                          ),
+                          DividerScreens(heightScreen: heightScreen, widthScreen: widthScreen),
                           TituloSecao(texto: l10n.republicaRankingTitle),
                           SizedBox(height: heightScreen*0.01),
                         ]

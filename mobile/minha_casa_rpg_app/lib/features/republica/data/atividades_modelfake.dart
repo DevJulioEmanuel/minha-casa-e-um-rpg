@@ -1,11 +1,11 @@
+import 'package:minha_casa_rpg_app/features/republica/data/usuario_modelfake.dart';
+
 class AtividadesModelFake {
-  final String pathImage;
   final String texto;
-  final int corUsuario;
+  final UsuarioModelfake usuario;
 
   AtividadesModelFake({
-    required this.pathImage,
     required this.texto,
-    required this.corUsuario
+    required this.usuario
   });
 }

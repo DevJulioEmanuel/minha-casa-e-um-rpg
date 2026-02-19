@@ -58,11 +58,11 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.light(
           //brightness: brightness, 
           primary: Color(0xff60A7CD), 
-          //onPrimary: onPrimary, 
-          //secondary: secondary, 
+          //onPrimary: onPrimary,   
+          secondary: Color(0xFF153968), 
           //onSecondary: onSecondary, 
           //error: error, 
-          //onError: onError, 
+          onError: Color(0xff60CD64), 
           //surface: surface, 
           //onSurface: onSurface
         )
@@ -74,12 +74,8 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('pt'),
-        Locale('en'),
-        Locale('es'),
-      ],
+      ],  
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

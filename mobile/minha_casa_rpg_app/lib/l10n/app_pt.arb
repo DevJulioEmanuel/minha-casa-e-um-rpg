@@ -1,11 +1,17 @@
 {
-    "republicaRepublicaTitle": "A Republica",
-    "republicaAtividadesTitle": "Atividades",
-    "republicaRankingTitle": "Ranking",
+    "republicaRepublicaTitle": "A REPUBLICA",
+    "republicaAtividadesTitle": "ATIVIDADES",
+    "republicaRankingTitle": "RANKING",
 
     "navHome": "República",
     "navTasks": "Tarefas",
     "navExpenses": "Despesas",
     "navShop": "Loja",
-    "navProfile": "Perfil"
+    "navProfile": "Perfil",
+
+    "tarefasTitle": "TAREFAS",
+    "tarefasButtomNovaTarefa": "+ NOVA TAREFA",
+    "tarefasFiltroPendentes": "PENDENTES",
+    "tarefasFiltroAtrasadas": "ATRASADAS",
+    "tarefasFiltroConcluidas": "CONCLUIDAS"
 }

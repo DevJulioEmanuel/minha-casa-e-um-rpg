@@ -9,13 +9,13 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get republicaRepublicaTitle => 'La Casa';
+  String get republicaRepublicaTitle => 'LA CASA';
 
   @override
-  String get republicaAtividadesTitle => 'Actividad';
+  String get republicaAtividadesTitle => 'ACTIVIDAD';
 
   @override
-  String get republicaRankingTitle => 'Clasificación';
+  String get republicaRankingTitle => 'CLASIFICACIÓN';
 
   @override
   String get navHome => 'Casa';
@@ -31,4 +31,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get navProfile => 'Perfil';
+
+  @override
+  String get tarefasTitle => 'TAREAS';
+
+  @override
+  String get tarefasButtomNovaTarefa => '+ NUEVA TAREA';
+
+  @override
+  String get tarefasFiltroPendentes => 'PENDIENTES';
+
+  @override
+  String get tarefasFiltroAtrasadas => 'ATRASADAS';
+
+  @override
+  String get tarefasFiltroConcluidas => 'CONCLUIDAS';
 }

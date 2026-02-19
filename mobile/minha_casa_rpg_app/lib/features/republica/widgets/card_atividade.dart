@@ -34,6 +34,7 @@ class CardAtividade extends StatelessWidget {
             Expanded(
               child: Text(
                 texto,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white),
               ),
             )
           ]

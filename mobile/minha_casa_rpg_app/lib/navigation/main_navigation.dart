@@ -4,22 +4,24 @@ import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 
 class MainNavigation extends StatelessWidget {
   final Widget child;
+  final String location;
   const MainNavigation({
     super.key,
-    required this.child
+    required this.child,
+    required this.location
   });
 
-  int _calculateIndex(BuildContext context) {
-    final location = GoRouterState.of(context).uri.toString();
+  int _calculateIndex() {
 
-    if (location.startsWith('/republica')) return 0;
-    if (location.startsWith('/tarefas')) return 1;
-    if (location.startsWith('/despesas')) return 2;
-    if (location.startsWith('/loja')) return 3;
-    if (location.startsWith('/perfil')) return 4;
+  if (location.startsWith('/republica')) return 0;
+  if (location.startsWith('/tarefas')) return 1;
+  if (location.startsWith('/despesas')) return 2;
+  if (location.startsWith('/loja')) return 3;
+  if (location.startsWith('/perfil')) return 4;
 
-    return 0;
-  }
+  return 0;
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class MainNavigation extends StatelessWidget {
         unselectedFontSize: 12,
         type: BottomNavigationBarType.fixed,
        
-        currentIndex: _calculateIndex(context),
+        currentIndex: _calculateIndex(),
         onTap: (index) {
           switch (index) {
             case 0:
