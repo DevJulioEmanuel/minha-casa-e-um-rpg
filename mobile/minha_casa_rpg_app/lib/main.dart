@@ -34,37 +34,49 @@ class MyApp extends StatelessWidget {
       title: 'Minha Casa RPG',
       theme: ThemeData(
         useMaterial3: true,
+        
         fontFamily: 'Cinzel',
         textTheme: const TextTheme(
           headlineLarge: TextStyle(
             fontFamily: 'Cinzel_Decorative',
-            fontSize: 45,
+            fontSize: 42,
             fontWeight: FontWeight.w700,
-            color: Color(0xFF153968)
+            color: Color(0xFF153968),
           ),
           titleLarge: TextStyle(
-            fontFamily: 'Cinzel',
-            fontSize: 45,
-            fontWeight: FontWeight.w700,
-            color: Color(0xFF153968)
+            fontSize: 28,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF153968),
           ),
-          bodySmall: TextStyle(
-            fontSize: 12
+          titleMedium: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+          bodyLarge: TextStyle(
+            fontSize: 18,
           ),
           bodyMedium: TextStyle(
-            fontSize: 16
-          )
+            fontSize: 16,
+          ),
+          bodySmall: TextStyle(
+            fontSize: 13,
+          ),
+        ).apply(
+          bodyColor: Color(0xFF153968)
         ),
         colorScheme: const ColorScheme.light(
           //brightness: brightness, 
-          primary: Color(0xff60A7CD), 
+          primary: Color(0xFF77B882), 
           //onPrimary: onPrimary,   
           secondary: Color(0xFF153968), 
           //onSecondary: onSecondary, 
-          //error: error, 
-          onError: Color(0xff60CD64), 
+          error: Color(0xffFB5D5D), 
+          onError: Color(0xFF60CD64), 
           //surface: surface, 
           //onSurface: onSurface
+        ),
+        bottomSheetTheme: const BottomSheetThemeData(
+            dragHandleColor: Color(0xFF153968)  
         )
       ),
       routerConfig: routes,

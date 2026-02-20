@@ -24,7 +24,7 @@ class WelcomeScreen extends StatelessWidget {
                   children: [
                     SizedBox(height: MediaQuery.of(context).size.height * 0.08),
                     TituloWelcome(texto: "MINHA CASA É UM RPG", size: 40.0),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.32),
+                    Expanded(child: SizedBox(height: MediaQuery.of(context).size.height * 0.32)),
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
@@ -51,7 +51,8 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                    )
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   ],
                 ),
               )

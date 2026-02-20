@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/features/republica/data/bd_fake.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/usuario_modelfake.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/divider_screens.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/buttom_newtask.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_task.dart';
@@ -46,7 +45,7 @@ class _TarefasScreenState extends ConsumerState<TarefasScreen> {
                           SizedBox(height: heightScreen*0.025),
                           TituloScreen(),
                           DividerScreens(heightScreen: heightScreen, widthScreen: widthScreen),
-                          ButtomNewtask(),
+                          ButtomNewtask(heightScreen: heightScreen),
                           SizedBox(height: heightScreen*0.03),
                           FiltroWidgets(widthScreen: widthScreen, heightScreen: heightScreen),
                           SizedBox(height: heightScreen*0.025),
@@ -63,7 +62,7 @@ class _TarefasScreenState extends ConsumerState<TarefasScreen> {
                             scaleImage: scaleSmallSprite
                           );
                       },
-                      childCount: usuarios.length
+                      childCount: atividades.length
                       )
                     )
                   ]

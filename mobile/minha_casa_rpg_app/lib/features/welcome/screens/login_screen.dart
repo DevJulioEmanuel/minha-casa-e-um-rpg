@@ -78,23 +78,26 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             child: SafeArea(child: 
               SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Column(
                     children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: IconButton(
-                          onPressed: () => context.pop(), 
-                          icon: Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                            size: 40.0,
-                            )
-                          ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: IconButton(
+                            onPressed: () => context.pop(), 
+                            icon: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                              size: 40.0,
+                              )
+                            ),
+                        ),
                       ),
                       SizedBox(height: heightScreen * 0.01),
                       TituloWelcome(texto: "BEM VINDO DE VOLTA GUERREIRO!", size: 35.0),
-                      SizedBox(height: heightScreen * 0.20),
+                      SizedBox(height: heightScreen * 0.35),
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
@@ -144,7 +147,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                   texto: authState.isLoading? "Carregando" : "Entrar",
                                   function: authState.isLoading? () {} : entrarSubmit
                                 ),
-                                ButtomGoogle(texto: "Entrar com Google", function: googleSubmit),
+                                ButtomGoogle(function: googleSubmit),
                                 RichText(
                                   text: TextSpan(
                                     style: Theme.of(context).textTheme.bodyMedium,

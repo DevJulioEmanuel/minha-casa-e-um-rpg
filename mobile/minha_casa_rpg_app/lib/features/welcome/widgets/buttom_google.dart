@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ButtomGoogle extends StatelessWidget {
-  final String texto;
   final VoidCallback function;
 
   const ButtomGoogle({
     super.key,
-    required this.texto,
     required this.function
   });
 
@@ -23,16 +21,13 @@ class ButtomGoogle extends StatelessWidget {
         elevation: 5
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("assets/images/google_image.png"),
           Text(
-            texto,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20
-            ),
+            "ENTRAR COM    ",
+            style: Theme.of(context).textTheme.bodyLarge
           ),
+          Image.asset("assets/images/google_image.png", scale: 1.5),
         ],
       )
     );

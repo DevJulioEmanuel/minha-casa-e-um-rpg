@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:minha_casa_rpg_app/features/republica/data/atividades_modelfake.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/usuario_modelfake.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/card_atividade.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/bottomsheets_details.dart';
 
@@ -21,8 +20,12 @@ class CardTask extends StatelessWidget {
       context: context,
       useSafeArea: true,
       showDragHandle: true,
+      isScrollControlled: true,
+      backgroundColor: Color.fromARGB(255, 239, 242, 248),
       builder: (context) {
-        return BottomsheetsDetails(atividade: atividade, scaleImage: scaleImage);
+        return FractionallySizedBox(
+          heightFactor: 0.78,
+          child: BottomsheetsDetails(atividade: atividade, scaleImage: scaleImage));
       }
     );
   }

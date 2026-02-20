@@ -10,7 +10,7 @@ import 'package:minha_casa_rpg_app/features/welcome/screens/welcome_screen.dart'
 import 'package:minha_casa_rpg_app/navigation/main_navigation.dart';
 
 final routes = GoRouter(
-  initialLocation: '/tarefas',
+  initialLocation: '/welcome',
   routes: [
     GoRoute(
         path: '/welcome',

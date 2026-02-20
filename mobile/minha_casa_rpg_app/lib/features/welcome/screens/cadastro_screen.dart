@@ -150,7 +150,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
                                   ),
                                 ),
                                 ButtomWelcome(texto: "Cadastrar", function: cadastrarSubmit),
-                                ButtomGoogle(texto: "Entrar com Google", function: googleSubmit),
+                                ButtomGoogle(function: googleSubmit),
                               ],
                             ),
                           ),

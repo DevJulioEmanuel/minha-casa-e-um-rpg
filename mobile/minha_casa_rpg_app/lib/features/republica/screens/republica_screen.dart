@@ -67,13 +67,13 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                           // NOME E FOTO DO PERSONAGEM
                           SizedBox(height: heightScreen*0.035),
                           Text(
-                            "Julio Emanuel",
+                            "Kratos",
                             style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: 25)
                           ),
                           SizedBox(height: heightScreen*0.015),
                           Center(
                             child: PixelSprite(
-                              path: 'assets/images/meu_avatar.png',
+                              path: 'assets/images/meu_avatar3.png',
                               scale: scaleBigSprite,
                             )
                           ),
