@@ -37,7 +37,8 @@ class MainNavigation extends StatelessWidget {
         selectedFontSize: 14,
         unselectedFontSize: 12,
         type: BottomNavigationBarType.fixed,
-       
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         currentIndex: _calculateIndex(),
         onTap: (index) {
           switch (index) {

@@ -57,9 +57,9 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                StatsIcons(heightScreen: heightScreen, icon: Icons.shield_outlined, texto: 'LV. 5'),
-                                StatsIcons(heightScreen: heightScreen, icon: Icons.star_border_purple500, texto: '360 xp'),
-                                StatsIcons(heightScreen: heightScreen, icon: Icons.monetization_on_outlined, texto: '120 c.')
+                                StatsIcons(heightScreen: heightScreen, path: 'assets/icons/etiqueta.png', texto: 'LV. 5'),
+                                StatsIcons(heightScreen: heightScreen, path: 'assets/icons/xp_estrela.png', texto: '360 xp'),
+                                StatsIcons(heightScreen: heightScreen, path: 'assets/icons/coins.png', texto: '120 c.')
                               ],
                             ),
                           ),

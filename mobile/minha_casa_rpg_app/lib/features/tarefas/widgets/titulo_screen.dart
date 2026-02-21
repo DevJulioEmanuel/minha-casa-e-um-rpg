@@ -11,7 +11,7 @@ class TituloScreen extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     return Text(
       l10n.tarefasTitle,
-      style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: 35),
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 35),
       textAlign: TextAlign.center,
     );
   }

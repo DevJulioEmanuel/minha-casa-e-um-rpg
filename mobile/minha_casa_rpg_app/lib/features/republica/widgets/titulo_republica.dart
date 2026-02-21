@@ -15,7 +15,7 @@ class TituloRepublica extends StatelessWidget {
       textAlign: TextAlign.center,
       text: 
       TextSpan(
-        style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: 35),
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 35),
         children: [
           TextSpan(
             text: l10n.republicaRepublicaTitle,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/bottomsheet_newtask.dart';
+import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/dialog_newtask.dart';
 import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 
 class ButtomNewtask extends StatelessWidget {
@@ -11,22 +11,26 @@ class ButtomNewtask extends StatelessWidget {
     });
 
   void _openNewTask(BuildContext context) {
-    showModalBottomSheet(
+    showDialog(
       context: context,
-      useSafeArea: true,
-      showDragHandle: true,
-      isScrollControlled: true,
-      backgroundColor: Color.fromARGB(255, 215, 225, 240),
+      barrierDismissible: false,
       builder: (context) {
-        return Padding(
-          padding: EdgeInsets.only(
-            bottom: MediaQuery.of(context).viewInsets.bottom,
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          child: Container(
+            width: 320,
+            padding: EdgeInsets.all(24),
+            decoration: BoxDecoration(
+              color: Color(0xFFF3EFE6),
+              borderRadius: BorderRadius.circular(24),
+              image: DecorationImage(
+                image: AssetImage("assets/texture/textura_papel.png") ,
+                fit: BoxFit.cover,
+                opacity: 0.2
+              ),
+            ),
+            child: DialogNewtask(),
           ),
-          child: Wrap(
-            children: [ 
-              BottomsheetNewtaskl(heightScreen: heightScreen)
-            ]
-          )
         );
       }
     );

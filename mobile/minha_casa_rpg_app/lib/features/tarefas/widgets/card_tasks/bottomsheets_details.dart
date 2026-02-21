@@ -22,9 +22,10 @@ class BottomsheetsDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 15,
           children: [
+            SizedBox(height: scaleImage*10),
             Text(
               atividade.texto,
-              style: Theme.of(context).textTheme.titleLarge
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: 24)
             ),
             SizedBox(height: scaleImage*0.5),
             // NOME E FOTO DO USUARIO
@@ -49,7 +50,7 @@ class BottomsheetsDetails extends StatelessWidget {
             ),
            
             BottomsheetsStats(
-              path: 'assets/icons/ampulheta.png', 
+              path: 'assets/icons/calendario.png', 
               texto: DateFormat('dd/MM/yyyy').format(atividade.dataPrevista),
               scaleImage: scaleImage
             ),
@@ -60,19 +61,19 @@ class BottomsheetsDetails extends StatelessWidget {
               scaleImage: scaleImage
             ),
             BottomsheetsStats(
-              path: 'assets/icons/ampulheta.png', 
+              path: 'assets/icons/etiqueta.png', 
               texto: atividade.tipoTarefa.name.toString(),
               scaleImage: scaleImage
             ),
             
             BottomsheetsStats(
-              path: 'assets/icons/ampulheta.png', 
+              path: 'assets/icons/xp_estrela.png', 
               texto: "${atividade.xp.toString()} xp",
               scaleImage: scaleImage
             ),
             
             BottomsheetsStats(
-              path: 'assets/icons/ampulheta.png', 
+              path: 'assets/icons/coins.png', 
               texto: "${atividade.coins.toString()} coins",
               scaleImage: scaleImage
             ),

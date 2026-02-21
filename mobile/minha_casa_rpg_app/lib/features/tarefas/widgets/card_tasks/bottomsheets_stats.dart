@@ -15,7 +15,7 @@ class BottomsheetsStats extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(path),
+        Image.asset(path, filterQuality: FilterQuality.none),
         SizedBox(width: scaleImage*15),
         Text(
           texto,

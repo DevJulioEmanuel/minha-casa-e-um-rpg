@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class StatsIcons extends StatelessWidget {
   final double heightScreen;
-  final IconData icon;
+  final String path;
   final String texto;
   
   const StatsIcons({
     super.key,
     required this.heightScreen,
-    required this.icon,
+    required this.path,
     required this.texto
     });
 
@@ -16,11 +16,7 @@ class StatsIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(
-          icon,
-          size: 32,
-          color: Theme.of(context).colorScheme.primary,
-        ),
+        Image.asset(path),
         SizedBox(height: heightScreen*0.005),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
