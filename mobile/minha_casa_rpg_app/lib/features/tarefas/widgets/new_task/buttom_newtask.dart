@@ -16,9 +16,18 @@ class ButtomNewtask extends StatelessWidget {
       useSafeArea: true,
       showDragHandle: true,
       isScrollControlled: true,
-      backgroundColor: Color.fromARGB(255, 32, 74, 138),
+      backgroundColor: Color.fromARGB(255, 215, 225, 240),
       builder: (context) {
-        return BottomsheetNewtaskl(heightScreen: heightScreen);
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: Wrap(
+            children: [ 
+              BottomsheetNewtaskl(heightScreen: heightScreen)
+            ]
+          )
+        );
       }
     );
   }

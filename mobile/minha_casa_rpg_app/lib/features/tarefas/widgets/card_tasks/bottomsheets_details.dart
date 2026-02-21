@@ -49,30 +49,30 @@ class BottomsheetsDetails extends StatelessWidget {
             ),
            
             BottomsheetsStats(
-              icon: Icon(Icons.calendar_month), 
+              path: 'assets/icons/ampulheta.png', 
               texto: DateFormat('dd/MM/yyyy').format(atividade.dataPrevista),
               scaleImage: scaleImage
             ),
             
             BottomsheetsStats(
-              icon: Icon(Icons.access_time), 
+              path: 'assets/icons/ampulheta.png', 
               texto: atividade.statusTarefa.name.toString(),
               scaleImage: scaleImage
             ),
             BottomsheetsStats(
-              icon: Icon(Icons.local_offer), 
+              path: 'assets/icons/ampulheta.png', 
               texto: atividade.tipoTarefa.name.toString(),
               scaleImage: scaleImage
             ),
             
             BottomsheetsStats(
-              icon: Icon(Icons.star_border_purple500), 
+              path: 'assets/icons/ampulheta.png', 
               texto: "${atividade.xp.toString()} xp",
               scaleImage: scaleImage
             ),
             
             BottomsheetsStats(
-              icon: Icon(Icons.monetization_on_outlined), 
+              path: 'assets/icons/ampulheta.png', 
               texto: "${atividade.coins.toString()} coins",
               scaleImage: scaleImage
             ),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class BottomsheetsStats extends StatelessWidget {
-  final Icon icon;
+  final String path;
   final String texto;
   final double scaleImage;
   const BottomsheetsStats({
     super.key,
-    required this.icon,
+    required this.path,
     required this.texto,
     required this.scaleImage
   });
@@ -15,7 +15,7 @@ class BottomsheetsStats extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon.icon, size: scaleImage*30, color: Theme.of(context).colorScheme.secondary),
+        Image.asset(path),
         SizedBox(width: scaleImage*15),
         Text(
           texto,
