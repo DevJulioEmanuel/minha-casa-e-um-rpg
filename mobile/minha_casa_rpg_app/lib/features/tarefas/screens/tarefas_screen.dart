@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/features/republica/data/bd_fake.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/divider_screens.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/buttom_newtask.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_task.dart';
+import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/buttom_newtask.dart';
+import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/card_task.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/filtro_widgets.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/titulo_screen.dart';
 

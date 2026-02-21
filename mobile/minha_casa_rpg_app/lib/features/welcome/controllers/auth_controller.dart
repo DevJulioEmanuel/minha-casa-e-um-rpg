@@ -26,7 +26,5 @@ class AuthController extends AsyncNotifier<User?> {
       final user = await _repository.login(email, password);
       return user;
     }); 
-
-    
   }
 } 

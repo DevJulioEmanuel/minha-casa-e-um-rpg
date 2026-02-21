@@ -22,11 +22,10 @@ class ButtomWelcome extends StatelessWidget {
         ),
         elevation: 5
       ),
-      child: Text(
-        texto,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20
+      child: Center(
+        child: Text(
+          texto,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.white)
         ),
       )
     );

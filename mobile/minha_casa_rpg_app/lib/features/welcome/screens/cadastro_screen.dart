@@ -15,14 +15,12 @@ class CadastroScreen extends StatefulWidget {
 
 class _CadastroScreenState extends State<CadastroScreen> {
   final _formKey = GlobalKey<FormState>();
-  final nomeController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmController = TextEditingController();
   
   @override
   void dispose() {
-    nomeController.dispose();
     emailController.dispose();
     passwordController.dispose();
     confirmController.dispose();
@@ -31,11 +29,9 @@ class _CadastroScreenState extends State<CadastroScreen> {
 
   void cadastrarSubmit() {
     if (_formKey.currentState!.validate()) {
-      final nome = nomeController.text;
       final email = emailController.text;
       final password = passwordController.text;
       final confirm = confirmController.text;
-      debugPrint(nome);
       debugPrint(email);
       debugPrint(password);
       debugPrint(confirm);
@@ -63,102 +59,102 @@ class _CadastroScreenState extends State<CadastroScreen> {
           ),
           Positioned.fill(
             child: SafeArea(child: 
-              SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: IconButton(
-                          onPressed: () => context.pop(), 
-                          icon: Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                            size: 40.0,
-                            )
-                          ),
-                      ),
-                      SizedBox(height: heightScreen * 0.01),
-                      TituloWelcome(texto: "BEM VINDO GUERREIRO!", size: 35.0,),
-                      SizedBox(height: heightScreen * 0.10),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(246, 34, 62, 82),
-                            borderRadius: BorderRadius.circular(20.0) 
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Column(
-                              spacing: 25,
-                              children: [
-                                Form(
-                                  key: _formKey,
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  return SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: constraints.maxHeight
+                    ),
+                    child: IntrinsicHeight(
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          children: [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: IconButton(
+                                onPressed: () => context.pop(), 
+                                icon: Icon(
+                                  Icons.arrow_back,
+                                  color: Colors.white,
+                                  size: 40.0,
+                                  )
+                                ),
+                            ),
+                            SizedBox(height: heightScreen * 0.01),
+                            TituloWelcome(texto: "BEM VINDO GUERREIRO!", size: 35.0,),
+                            Spacer(),
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Color.fromARGB(246, 34, 62, 82),
+                                  borderRadius: BorderRadius.circular(20.0) 
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(25.0),
                                   child: Column(
-                                    spacing: 20,
+                                    spacing: 25,
                                     children: [
-                                      TextfieldWelcome(
-                                        label: "Nome",
-                                        controller: nomeController,
-                                        keyboardType: TextInputType.name,
-                                        validator: (value) {
-                                          if (value == null || value.isEmpty) {
-                                            return "Digite o seu nome";
-                                          }
-                                          return null;
-                                        },
+                                      Form(
+                                        key: _formKey,
+                                        child: Column(
+                                          spacing: 20,
+                                          children: [
+                                            TextfieldWelcome(
+                                              label: "E-mail",
+                                              controller: emailController,
+                                              keyboardType: TextInputType.emailAddress,
+                                              validator: (value) {
+                                                if (value == null || value.isEmpty) {
+                                                  return "Digite o seu e-mail";
+                                                } 
+                                                if (!value.contains("@")) {
+                                                  return "E-mail inválido";
+                                                }
+                                                return null;
+                                              },
+                                            ),
+                                            TextfieldWelcome(
+                                              label: "Senha",
+                                              controller: passwordController,
+                                              obscureText: true,
+                                              validator: (value) {
+                                                if (value == null || value.length < 6) {
+                                                  return "Senha muito curta";
+                                                }
+                                                return null;
+                                              },
+                                            ),
+                                            TextfieldWelcome(
+                                              label: "Confirmação",
+                                              controller: confirmController,
+                                              obscureText: true,
+                                              validator: (value) {
+                                                if (value == null || value.length < 6) {
+                                                  return "Senha muito curta";
+                                                }
+                                                return null;
+                                              },
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                      TextfieldWelcome(
-                                        label: "E-mail",
-                                        controller: emailController,
-                                        keyboardType: TextInputType.emailAddress,
-                                        validator: (value) {
-                                          if (value == null || value.isEmpty) {
-                                            return "Digite o seu e-mail";
-                                          } 
-                                          if (!value.contains("@")) {
-                                            return "E-mail inválido";
-                                          }
-                                          return null;
-                                        },
-                                      ),
-                                      TextfieldWelcome(
-                                        label: "Senha",
-                                        controller: passwordController,
-                                        obscureText: true,
-                                        validator: (value) {
-                                          if (value == null || value.length < 6) {
-                                            return "Senha muito curta";
-                                          }
-                                          return null;
-                                        },
-                                      ),
-                                      TextfieldWelcome(
-                                        label: "Confirmação",
-                                        controller: confirmController,
-                                        obscureText: true,
-                                        validator: (value) {
-                                          if (value == null || value.length < 6) {
-                                            return "Senha muito curta";
-                                          }
-                                          return null;
-                                        },
-                                      ),
+                                      ButtomWelcome(texto: "Cadastrar", function: cadastrarSubmit),
+                                      ButtomGoogle(function: googleSubmit),
                                     ],
                                   ),
                                 ),
-                                ButtomWelcome(texto: "Cadastrar", function: cadastrarSubmit),
-                                ButtomGoogle(function: googleSubmit),
-                              ],
+                              ),
                             ),
-                          ),
+                          ],
                         ),
-                      )
-                    ],
+                      ),
+                    ),
                   ),
-                ),
+                );
+                }
               )
             )
           )

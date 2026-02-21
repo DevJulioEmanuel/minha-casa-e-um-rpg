@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/newtask_modal.dart';
+import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/bottomsheet_newtask.dart';
 import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 
 class ButtomNewtask extends StatelessWidget {
@@ -13,16 +13,14 @@ class ButtomNewtask extends StatelessWidget {
   void _openNewTask(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: Color.fromARGB(255, 239, 242, 248),
-      isScrollControlled: true,
       useSafeArea: true,
       showDragHandle: true,
+      isScrollControlled: true,
+      backgroundColor: Color.fromARGB(255, 32, 74, 138),
       builder: (context) {
-        return FractionallySizedBox(
-          heightFactor: 0.9,
-          child: NewtaskModal(heightScreen: heightScreen)
-        );
-      });
+        return BottomsheetNewtaskl(heightScreen: heightScreen);
+      }
+    );
   }
 
   @override
