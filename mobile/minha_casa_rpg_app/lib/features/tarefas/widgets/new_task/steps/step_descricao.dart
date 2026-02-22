@@ -18,36 +18,35 @@ class StepDescricao extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium),
         const SizedBox(height: 16),
         TextField(
-            controller: controller,
-            decoration: InputDecoration(
-              labelText: "Descreva a atividade",
-              
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(14),
-              ),
-              labelStyle: TextStyle(
-                color: Theme.of(context).colorScheme.secondary,
-              ),
+          controller: controller,
+          decoration: InputDecoration(
+            labelText: "Descreva a atividade",
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(14),
+            ),
+            labelStyle: TextStyle(
+              color: Theme.of(context).colorScheme.secondary,
+            ),
 
-              floatingLabelStyle: TextStyle(
+            floatingLabelStyle: TextStyle(
+              color: Theme.of(context).colorScheme.secondary,
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(14),
+              borderSide: BorderSide(
                 color: Theme.of(context).colorScheme.secondary,
+                width: 1.5,
               ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(14),
-                borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.secondary,
-                  width: 1.5,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(14),
-                borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.secondary,
-                  width: 2,
-                ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(14),
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.secondary,
+                width: 2,
               ),
             ),
           ),
+        ),
         const SizedBox(height: 24),
         RpgStepButtom(texto: "Próximo", function: () => onNext(controller.text))
       ],
