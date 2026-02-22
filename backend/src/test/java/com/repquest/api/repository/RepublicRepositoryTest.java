@@ -15,10 +15,7 @@ public class RepublicRepositoryTest {
     public void salvarTest(){
         Republic republic = new Republic();
         republic.setName("Teste");
-        republic.setInviteCode("ABCDEFG");
-
-        Republic republicSalva = repository.save(republic);
-        System.out.println("Republica Salva: " + republicSalva);
+        repository.save(republic);
     }
 
 }
