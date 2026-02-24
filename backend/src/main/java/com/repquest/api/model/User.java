@@ -18,7 +18,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(length = 20, nullable = false)
+    @Column(length = 20)
     private String name;
 
     @Column(nullable = false, unique = true)
@@ -26,6 +26,12 @@ public class User {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "color_id")
+    private String color;
+
+    @Column(name = "avatar_id")
+    private String avatar;
 
     @Column(name = "current_xp")
     private Integer currentXp = 0;
@@ -35,9 +41,6 @@ public class User {
 
     @Column(name = "coin_balance")
     private Integer coinBalance = 0;
-
-    @Column(name = "color")
-    private String color;
 
     @ManyToOne
     @JoinColumn(name = "republic_id")

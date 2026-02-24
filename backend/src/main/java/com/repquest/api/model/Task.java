@@ -34,6 +34,10 @@ public class Task {
     @Column(nullable = false)
     private TaskStatus status = TaskStatus.OPEN;
 
+    @Enumerated(value = EnumType.STRING)
+    @Column(nullable = false)
+    private TaskDifficulty difficulty;
+
     @Column(name = "due_date", nullable = false)
     private LocalDate dueDate;
 

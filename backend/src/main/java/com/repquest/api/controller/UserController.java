@@ -1,6 +1,7 @@
 package com.repquest.api.controller;
 
 import com.repquest.api.dto.JoinRequestDTO;
+import com.repquest.api.dto.UserAvatarDTO;
 import com.repquest.api.dto.UserDTO;
 import com.repquest.api.dto.UserResponseDTO;
 import com.repquest.api.mapper.UserMapper;
@@ -31,9 +32,16 @@ public class UserController {
         return ResponseEntity.ok(responseDTO);
     }
 
+    @PatchMapping("/{id}/profile")
+    public ResponseEntity<UserResponseDTO> completedProfile(@PathVariable("id") UUID id, @RequestBody @Valid UserAvatarDTO dto){
+        UserResponseDTO responseDTO = mapper.toResponse(service.completedProfile(id, dto));
+
+        return ResponseEntity.ok(responseDTO);
+    }
+
     @PatchMapping("/{id}/join")
-    public ResponseEntity<UserResponseDTO> join(@PathVariable("id") String id, @RequestBody JoinRequestDTO dto){
-        UserResponseDTO response = mapper.toResponse(service.joinRepublic(UUID.fromString(id), dto.inviteCode()));
+    public ResponseEntity<UserResponseDTO> join(@PathVariable("id") UUID id, @RequestBody JoinRequestDTO dto){
+        UserResponseDTO response = mapper.toResponse(service.joinRepublic(id, dto.inviteCode()));
 
         return ResponseEntity.ok(response);
     }
