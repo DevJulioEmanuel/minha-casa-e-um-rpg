@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_riverpod/legacy.dart';
 import 'package:minha_casa_rpg_app/features/avatares/avatar_size.dart';
-import 'package:minha_casa_rpg_app/features/avatares/data/color_model.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/color_repository.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/avatar_view_onboarding.dart';

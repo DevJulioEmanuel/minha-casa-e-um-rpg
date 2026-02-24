@@ -47,7 +47,10 @@ class ConfirmStep extends ConsumerWidget {
                           ),
                           AvatarViewOnboarding(path: onboarding.avatar!.imagePath, avatarSize: AvatarSize.big, cor: onboarding.cor!.color),
                           SizedBox(height: 8),
-                          RpgStepButtom(texto: "CONCLUIR", function: onNext),
+                          RpgStepButtom(texto: "CONCLUIR", function: () async {
+                            await ref.read(onboardingProvider.notifier).criarUsuario();
+                            onNext();
+                            }),
                           RpgStepButtom(texto: "VOLTAR", function: onPrevious, color: Theme.of(context).colorScheme.error)
                         ],
                       ),

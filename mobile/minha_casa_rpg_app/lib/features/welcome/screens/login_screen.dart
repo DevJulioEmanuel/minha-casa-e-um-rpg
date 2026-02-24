@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:minha_casa_rpg_app/features/welcome/controllers/auth_controller.dart';
+import 'package:minha_casa_rpg_app/features/welcome/provider/auth_controller.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_google.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_welcome.dart';
 import 'package:minha_casa_rpg_app/features/welcome/widgets/textfield_welcome.dart';
@@ -30,11 +30,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   Future<void> entrarSubmit() async {
     if (_formKey.currentState!.validate()) {
-      final email = emailController.text;
-      final password = passwordController.text;
-      await ref 
+      await ref
         .read(authControllerProvider.notifier)
-        .login(email, password);
+        .login(emailController.text, passwordController.text
+      );
     }
   }
 

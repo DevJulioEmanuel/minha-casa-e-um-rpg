@@ -4,13 +4,16 @@ import 'package:minha_casa_rpg_app/features/avatares/data/avatar_repository.dart
 import 'package:minha_casa_rpg_app/features/avatares/data/color_model.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/color_repository.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/data/Onboarding_state.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/services/onboarding_service.dart';
 
 final onboardingProvider = StateNotifierProvider<OnboardingProvider, OnboardingState>(
-  (ref) => OnboardingProvider(),
+  (ref) => OnboardingProvider(OnboardingService()),
 );
 
 class OnboardingProvider extends StateNotifier<OnboardingState> {
-  OnboardingProvider() 
+  final OnboardingService remote;
+
+  OnboardingProvider(this.remote) 
     : super(
       OnboardingState(
         avatar: AvatarRepository.avatars[0],
@@ -25,5 +28,21 @@ class OnboardingProvider extends StateNotifier<OnboardingState> {
   }
   void setColor(ColorModel cor) {
     state = state.copyWith(cor: cor);
+  }
+  void setNomeRepublica(String nome) {
+    state = state.copyWith(nomeRepublica: nome);
+  }
+  void setCodigoRepublica(String codigo) {
+    state = state.copyWith(codigoRepublica: codigo);
+  }
+
+  Future <void> criarUsuario() async {
+    await remote.criarUsuario(state);
+  }
+  Future <void> criarRepublica() async {
+    await remote.CriarRepublica(state);
+  }
+  Future <void> entrarRepublica() async {
+    await remote.EntrarRepublica(state);
   }
 } 

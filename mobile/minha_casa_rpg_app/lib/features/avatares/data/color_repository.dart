@@ -5,27 +5,27 @@ import 'package:minha_casa_rpg_app/features/avatares/data/color_model.dart';
 class ColorRepository {
   static const List<ColorModel> colors = [
     // --- VERMELHOS / ROSAS ---
-    ColorModel(id: "Vermelho Suave", color: Color(0xFFC96B6B)),
-    ColorModel(id: "Rosa Antigo", color: Color(0xFFC7829E)),
+    ColorModel(id: "vermelho_suave", color: Color(0xFFC96B6B)),
+    ColorModel(id: "rosa_antigo", color: Color(0xFFC7829E)),
 
     // --- LARANJAS / TERSACOTAS ---
-    ColorModel(id: "Laranja Pastel", color: Color(0xFFD6946A)),
-    ColorModel(id: "Terracota Clara", color: Color(0xFFC97C5D)),
+    ColorModel(id: "laranja_pastel", color: Color(0xFFD6946A)),
+    ColorModel(id: "terracota_clara", color: Color(0xFFC97C5D)),
 
     // --- AMARELOS / DOURADOS (Levemente "queimados" pro branco aparecer) ---
-    ColorModel(id: "Amarelo Mel", color: Color(0xFFC4A454)),
-    ColorModel(id: "Dourado Fosco", color: Color(0xFFB5984A)),
+    ColorModel(id: "amarelo_mel", color: Color(0xFFC4A454)),
+    ColorModel(id: "dourado_fosco", color: Color(0xFFB5984A)),
 
     // --- VERDES ---
-    ColorModel(id: "Verde Musgo", color: Color(0xFF8BA882)),
-    ColorModel(id: "Verde Sálvia", color: Color(0xFF7CA391)),
+    ColorModel(id: "verde_musgo", color: Color(0xFF8BA882)),
+    ColorModel(id: "verde_salvia", color: Color(0xFF7CA391)),
 
     // --- AZUIS ---
-    ColorModel(id: "Azul Sereno", color: Color(0xFF6794B5)),
-    ColorModel(id: "Azul Denim", color: Color(0xFF798DB5)),
+    ColorModel(id: "azul_sereno", color: Color(0xFF6794B5)),
+    ColorModel(id: "azul_denim", color: Color(0xFF798DB5)),
 
     // --- ROXOS / VIOLETAS ---
-    ColorModel(id: "Lavanda Médio", color: Color(0xFF9381B8)),
-    ColorModel(id: "Ametista Pálida", color: Color(0xFFA67DA3)),
+    ColorModel(id: "lavanda_medio", color: Color(0xFF9381B8)),
+    ColorModel(id: "ametista_palida", color: Color(0xFFA67DA3)),
   ];
 }

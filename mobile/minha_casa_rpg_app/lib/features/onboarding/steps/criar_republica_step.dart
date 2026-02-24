@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/textfield_name.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/rpg_step_buttom.dart';
 
@@ -44,8 +45,9 @@ class CriarRepublicaStep extends ConsumerWidget {
                         ),
                         TextfieldName(label: "Nome da república", controller: nomeRepublicacontroller),
                         RpgStepButtom(texto: "CRIAR", function: () {}),
-                        RpgStepButtom(texto: "VOLTAR", color: Theme.of(context).colorScheme.error, function: () { 
-                          FocusScope.of(context).unfocus(); 
+                        RpgStepButtom(texto: "VOLTAR", color: Theme.of(context).colorScheme.error, function: () async { 
+                          FocusScope.of(context).unfocus();
+                          await ref.read(onboardingProvider.notifier).criarRepublica();
                           onPrevious();
                           /*ref.read(
                             onboardingProvider.notifier
