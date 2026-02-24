@@ -70,8 +70,8 @@ class MyApp extends StatelessWidget {
           //onPrimary: onPrimary,   
           secondary: Color(0xFF153968), 
           //onSecondary: onSecondary, 
-          error: Color(0xffFB5D5D), 
-          onError: Color(0xFF60CD64), 
+          error: Color.fromARGB(255, 255, 124, 124), 
+          onError: Color(0xFF77B882), 
           //surface: surface, 
           //onSurface: onSurface
         ),

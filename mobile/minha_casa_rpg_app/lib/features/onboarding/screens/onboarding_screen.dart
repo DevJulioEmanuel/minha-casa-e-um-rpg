@@ -3,7 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/steps/avatar_step.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/steps/color_step.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/steps/confirm_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/steps/criar_republica_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/steps/entrar_republica_step.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/steps/name_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/steps/republica_step.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
@@ -30,7 +33,25 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     );
   }
 
+  void goToPage(int index) {
+    _pagecontroller.animateToPage(
+      index,
+      duration: Duration(milliseconds: 300),
+      curve: Curves.easeInOut
+    );
+  }
+
+  void backToRepublica() {
+    _pagecontroller.animateToPage(
+      4,
+      duration: Duration(milliseconds: 300),
+      curve: Curves.easeInOut
+    );
+  }
+
   final _namecontroller = TextEditingController();
+  final _codigocontroller = TextEditingController();
+  final _nomeRepublicacontroller = TextEditingController();
   @override
   void dispose() {
     _pagecontroller.dispose();
@@ -53,7 +74,10 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           NameStep(onNext: nextPage, namecontroller: _namecontroller),
           AvatarStep(onNext: nextPage, onPrevious: previousPage),
           ColorStep(onNext: nextPage, onPrevious: previousPage),
-          ConfirmStep(onNext: nextPage, onPrevious: previousPage)
+          ConfirmStep(onNext: nextPage, onPrevious: previousPage),
+          RepublicaStep(onCriar: () => goToPage(5), onEntrar: () => goToPage(6), onPrevious: previousPage),
+          CriarRepublicaStep(onPrevious: backToRepublica, nomeRepublicacontroller: _nomeRepublicacontroller),
+          EntrarRepublicaStep(onPrevious: backToRepublica, codigocontroller: _codigocontroller),
         ],
       ),
     );

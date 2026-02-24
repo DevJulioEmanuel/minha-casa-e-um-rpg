@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class RpgStepButtom extends StatelessWidget {
   final String texto;
   final VoidCallback? function;
+  final Color color;
 
   const RpgStepButtom({
     super.key,
     required this.texto,
-    required this.function
+    required this.function,
+    this.color = const Color(0xFF77B882)
   });
 
   @override
@@ -15,7 +17,7 @@ class RpgStepButtom extends StatelessWidget {
     return ElevatedButton(
       onPressed: function, 
       style: ElevatedButton.styleFrom(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: color,
         minimumSize: Size(500, 60),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8)
