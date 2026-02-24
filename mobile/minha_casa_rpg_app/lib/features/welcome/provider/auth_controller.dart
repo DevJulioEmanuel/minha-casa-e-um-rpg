@@ -1,0 +1,39 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
+import 'package:minha_casa_rpg_app/features/welcome/data/models/user_model.dart';
+import 'package:minha_casa_rpg_app/features/welcome/services/welcome_service.dart';
+
+final authControllerProvider =
+    StateNotifierProvider<AuthController, AsyncValue<User?>>(
+  (ref) => AuthController(WelcomeService()),
+);
+
+class AuthController extends StateNotifier<AsyncValue<User?>> {
+  final WelcomeService remote;
+
+  AuthController(this.remote) : super(const AsyncValue.data(null));
+
+  Future<void> register(String email, String password) async {
+    state = const AsyncValue.loading();
+    try {
+      final data = await remote.register(email, password);
+
+      final user = User.fromJson(data);
+      state = AsyncValue.data(user);
+    } catch (e, s) {
+      state = AsyncValue.error(e, s);
+    }
+  }
+
+  Future<void> login(String email, String password) async {
+    state = const AsyncValue.loading();
+    try {
+      final data = await remote.login(email, password);
+
+      final user = User.fromJson(data);
+      state = AsyncValue.data(user);
+    } catch (e, s) {
+      state = AsyncValue.error(e, s);
+    }
+  }
+}

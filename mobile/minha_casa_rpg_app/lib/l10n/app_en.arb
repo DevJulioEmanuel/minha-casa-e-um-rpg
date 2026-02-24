@@ -1,0 +1,18 @@
+{
+    "republicaRepublicaTitle": "THE HOUSE OF",
+    "republicaAtividadesTitle": "ACTIVITY",
+    "republicaRankingTitle": "LEADERBOARD",
+    
+    "navHome": "House",
+    "navTasks": "Tasks",
+    "navExpenses": "Expenses",
+    "navShop": "Shop",
+    "navProfile": "Profile",
+
+    "tarefasTitle": "TASKS",
+    "tarefasButtomNovaTarefa": "+ NEW TASK",
+    "tarefasFiltroPendentes": "PENDING",
+    "tarefasFiltroAtrasadas": "OVERDUE",
+    "tarefasFiltroConcluidas": "COMPLETED"
+
+}

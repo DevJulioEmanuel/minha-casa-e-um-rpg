@@ -1,0 +1,18 @@
+{
+    "republicaRepublicaTitle": "LA CASA",
+    "republicaAtividadesTitle": "ACTIVIDAD",
+    "republicaRankingTitle": "CLASIFICACIÓN",
+    
+    "navHome": "Casa",
+    "navTasks": "Tareas",
+    "navExpenses": "Gastos",
+    "navShop": "Tienda",
+    "navProfile": "Perfil",
+
+    "tarefasTitle": "TAREAS",
+    "tarefasButtomNovaTarefa": "+ NUEVA TAREA",
+    "tarefasFiltroPendentes": "PENDIENTES",
+    "tarefasFiltroAtrasadas": "ATRASADAS",
+    "tarefasFiltroConcluidas": "CONCLUIDAS"
+
+}
