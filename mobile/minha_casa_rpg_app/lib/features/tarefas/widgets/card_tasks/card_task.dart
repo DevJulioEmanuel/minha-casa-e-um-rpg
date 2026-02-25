@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/atividades_modelfake.dart';
+import 'package:minha_casa_rpg_app/db_fake/atividades_modelfake.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/card_atividade.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/bottomsheets_details.dart';
 

@@ -1,6 +1,6 @@
-import 'package:minha_casa_rpg_app/features/republica/data/status_tarefa.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/tipo_tarefa.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/usuario_modelfake.dart';
+import 'package:minha_casa_rpg_app/db_fake/status_tarefa.dart';
+import 'package:minha_casa_rpg_app/db_fake/tipo_tarefa.dart';
+import 'package:minha_casa_rpg_app/db_fake/usuario_modelfake.dart';
 
 class AtividadesModelFake {
   final String texto;

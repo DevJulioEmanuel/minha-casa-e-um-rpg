@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_confirmar.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_data.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_descricao.dart';

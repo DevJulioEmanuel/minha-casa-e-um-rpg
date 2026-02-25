@@ -29,8 +29,8 @@ class AuthController extends StateNotifier<AsyncValue<User?>> {
     state = const AsyncValue.loading();
     try {
       final data = await remote.login(email, password);
-
       final user = User.fromJson(data);
+      
       state = AsyncValue.data(user);
     } catch (e, s) {
       state = AsyncValue.error(e, s);

@@ -5,7 +5,7 @@ import 'package:minha_casa_rpg_app/core/network/http_client.dart';
 class WelcomeService {
   Future<Map<String, dynamic>> register(String email, String password) async {
     final response = await HttpClient.post(
-      "",
+      "/user",
       {
         "email": email,
         "password": password,
@@ -21,7 +21,7 @@ class WelcomeService {
 
   Future<Map<String, dynamic>> login(String email, String password) async {
     final response = await HttpClient.post(
-      "",
+      "/user",
       {
         "email": email,
         "password": password,
@@ -31,7 +31,6 @@ class WelcomeService {
     if (response.statusCode != 200) {
       throw Exception("Email ou senha inválidos");
     }
-
     return jsonDecode(response.body);
   }
 }

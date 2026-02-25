@@ -1,48 +1,42 @@
-
-
 import 'package:minha_casa_rpg_app/core/network/http_client.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/data/Onboarding_state.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/steps/criar_republica_step.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/steps/entrar_republica_step.dart';
 
 class OnboardingService {
-  Future<void> criarUsuario(OnboardingState state) async {
-    final response = await HttpClient.post(
-      //COLOCA O END POINT AQUI ARTHUR "", 
-      "",
+  Future<bool> criarUsuario(OnboardingState state) async {
+    final response = await HttpClient.patch(
+      "/user/7dcc527d-f823-44f6-a2aa-42bbd3652718/profile",
       {
-        "nome": state.nome,
-        "avatarId": state.avatar!.id,
-        "corId": state.cor!.id,
+        "name": state.nome,
+        "avatar": state.avatar!.id,
+        "color": state.cor!.id,
       }
       );
-    if (response.statusCode != 201) {
-      throw Exception("Erro ao criar usuário");
+    if (response.statusCode != 200) {
+      return false;
     }
+    return true;
   }
 
   Future<void> CriarRepublica(OnboardingState state) async {
     final response = await HttpClient.post(
-      //COLOCA O END POINT AQUI ARTHUR "", 
-      "",
+      "/republic",
       {
-        "nomeRepublica": state.nomeRepublica
+        "name": state.nomeRepublica
       }
       );
-    if (response.statusCode != 201) {
-      throw Exception("Erro ao criar usuário");
+    if (response.statusCode != 200) {
+      throw Exception("Erro ao criar o usuário");
     }
   }
 
   Future<void> EntrarRepublica(OnboardingState state) async {
-    final response = await HttpClient.post(
-      //COLOCA O END POINT AQUI ARTHUR "", 
-      "",
+    final response = await HttpClient.patch(
+      "/user/7dcc527d-f823-44f6-a2aa-42bbd3652718/join",
       {
-        "nomeRepublica": state.codigoRepublica
+        "inviteCode": state.codigoRepublica
       }
       );
-    if (response.statusCode != 201) {
+    if (response.statusCode != 200) {
       throw Exception("Erro ao criar usuário");
     }
   }

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/bd_fake.dart';
+import 'package:minha_casa_rpg_app/db_fake/bd_fake.dart';
+import 'package:minha_casa_rpg_app/features/avatares/avatar_size.dart';
+import 'package:minha_casa_rpg_app/features/avatares/avatar_view_onboarding.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/card_atividade.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/card_ranking.dart';
-import 'package:minha_casa_rpg_app/features/republica/widgets/divider_screens.dart';
-import 'package:minha_casa_rpg_app/features/republica/widgets/pixel_sprite.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/divider_screens.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/stats_icons.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/titulo_republica.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/titulo_secao.dart';
@@ -72,9 +73,15 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                           ),
                           SizedBox(height: heightScreen*0.015),
                           Center(
-                            child: PixelSprite(
-                              path: 'assets/images/meu_avatar3.png',
-                              scale: scaleBigSprite,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).colorScheme.primary,
+                                borderRadius: BorderRadius.circular(16)
+                              ),
+                              child: AvatarView(
+                                path: 'assets/images/avatar/meu_avatar2.png', 
+                                avatarSize: AvatarSize.big
+                              ),
                             )
                           ),
                           SizedBox(height: heightScreen*0.02),
@@ -118,6 +125,7 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                           return CardRanking(
                             path: usuario.pathImage,
                             nomeUsuario: usuario.nomeUsuario,
+                            cor: usuario.corUsuario,
                             xp: usuario.xp,
                             scaleImage: scaleSmallSprite,
                           );

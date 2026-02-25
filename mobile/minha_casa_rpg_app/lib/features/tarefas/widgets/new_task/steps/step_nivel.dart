@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/nivel_tarefa.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/rpg_step_buttom.dart';
+import 'package:minha_casa_rpg_app/db_fake/nivel_tarefa.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class StepNivel extends StatelessWidget {
   final Function(String) onNext;

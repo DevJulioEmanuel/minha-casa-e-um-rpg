@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/textfield_name.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/rpg_step_buttom.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class EntrarRepublicaStep extends ConsumerWidget {
   final VoidCallback onPrevious;
@@ -44,10 +44,12 @@ class EntrarRepublicaStep extends ConsumerWidget {
                         textAlign: TextAlign.center,
                         ),
                         TextfieldName(label: "Código da república", controller: codigocontroller),
-                        RpgStepButtom(texto: "JUNTAR-SE", function: () {}),
+                        RpgStepButtom(texto: "JUNTAR-SE", function: () async {
+                          ref.read(onboardingProvider.notifier).setCodigoRepublica(codigocontroller.text);
+                          await ref.read(onboardingProvider.notifier).entrarRepublica();
+                        }),
                         RpgStepButtom(texto: "VOLTAR", color: Theme.of(context).colorScheme.error, function: () async { 
                           FocusScope.of(context).unfocus();
-                          await ref.read(onboardingProvider.notifier).entrarRepublica();
                           onPrevious();
                           /*ref.read(
                             onboardingProvider.notifier

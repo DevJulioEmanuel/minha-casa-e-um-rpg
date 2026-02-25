@@ -11,7 +11,7 @@ import 'package:minha_casa_rpg_app/features/welcome/screens/welcome_screen.dart'
 import 'package:minha_casa_rpg_app/navigation/main_navigation.dart';
 
 final routes = GoRouter(
-  initialLocation: '/onboarding',
+  initialLocation: '/republica',
   routes: [
     GoRoute(
       path: '/welcome',
@@ -36,26 +36,26 @@ final routes = GoRouter(
         return MainNavigation(location: state.matchedLocation, child: child,);
       },
       routes: [
-      GoRoute(
-        path: '/republica',
-        builder: (context, state) => RepublicaScreen()
-      ),
-      GoRoute(
-        path: '/tarefas',
-        builder: (context, state) => TarefasScreen()
-      ),
-      GoRoute(
-        path: '/despesas',
-        builder: (context, state) => DespesasScreen()
-      ),
-      GoRoute(
-        path: '/loja',
-        builder: (context, state) => LojaScreen()
-      ),
-      GoRoute(
-        path: '/perfil',
-        builder: (context, state) => PerfilScreen()
-      )
+        GoRoute(
+          path: '/republica',
+          builder: (context, state) => RepublicaScreen()
+        ),
+        GoRoute(
+          path: '/tarefas',
+          builder: (context, state) => TarefasScreen()
+        ),
+        GoRoute(
+          path: '/despesas',
+          builder: (context, state) => DespesasScreen()
+        ),
+        GoRoute(
+          path: '/loja',
+          builder: (context, state) => LojaScreen()
+        ),
+        GoRoute(
+          path: '/perfil',
+          builder: (context, state) => PerfilScreen()
+        )
       ]
     ),
   ]

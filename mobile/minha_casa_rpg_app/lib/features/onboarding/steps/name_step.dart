@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/textfield_name.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/rpg_step_buttom.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class NameStep extends ConsumerWidget {
   final VoidCallback onNext;

@@ -1,12 +1,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/bd_fake.dart';
-import 'package:minha_casa_rpg_app/features/republica/widgets/divider_screens.dart';
+import 'package:minha_casa_rpg_app/db_fake/bd_fake.dart';
+import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/divider_screens.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/buttom_newtask.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/card_task.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/filtro_widgets.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/titulo_screen.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/titulo_screen.dart';
 
 
 class TarefasScreen extends ConsumerStatefulWidget{
@@ -24,7 +25,7 @@ class _TarefasScreenState extends ConsumerState<TarefasScreen> {
     final widthScreen = MediaQuery.of(context).size.width;
     //final scaleBigSprite = widthScreen*0.014;
     final scaleSmallSprite = widthScreen*0.003;
-
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       body: Stack(
         children: [
@@ -43,7 +44,7 @@ class _TarefasScreenState extends ConsumerState<TarefasScreen> {
                       child: Column(
                         children: [
                           SizedBox(height: heightScreen*0.025),
-                          TituloScreen(),
+                          TituloScreen(texto: l10n.tarefasTitle),
                           DividerScreens(heightScreen: heightScreen, widthScreen: widthScreen),
                           ButtomNewtask(heightScreen: heightScreen),
                           SizedBox(height: heightScreen*0.03),

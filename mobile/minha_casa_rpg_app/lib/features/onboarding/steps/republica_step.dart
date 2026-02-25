@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/rpg_step_buttom.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class RepublicaStep extends ConsumerWidget {
   final VoidCallback onEntrar, onCriar, onPrevious;

@@ -34,6 +34,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         .read(authControllerProvider.notifier)
         .login(emailController.text, passwordController.text
       );
+      
     }
   }
 

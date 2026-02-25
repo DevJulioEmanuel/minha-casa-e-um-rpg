@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/textfield_name.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/rpg_step_buttom.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class CriarRepublicaStep extends ConsumerWidget {
   final VoidCallback onPrevious;
@@ -44,14 +44,16 @@ class CriarRepublicaStep extends ConsumerWidget {
                         textAlign: TextAlign.center,
                         ),
                         TextfieldName(label: "Nome da república", controller: nomeRepublicacontroller),
-                        RpgStepButtom(texto: "CRIAR", function: () {}),
+                        RpgStepButtom(texto: "CRIAR", function: () async {
+                          ref.read(
+                            onboardingProvider.notifier
+                          ).setNomeRepublica(nomeRepublicacontroller.text);
+                          debugPrint("Nome antes de criar: ${ref.read(onboardingProvider).nomeRepublica}");
+                          await ref.read(onboardingProvider.notifier).criarRepublica();
+                        }),
                         RpgStepButtom(texto: "VOLTAR", color: Theme.of(context).colorScheme.error, function: () async { 
                           FocusScope.of(context).unfocus();
-                          await ref.read(onboardingProvider.notifier).criarRepublica();
                           onPrevious();
-                          /*ref.read(
-                            onboardingProvider.notifier
-                          ).setName(codigocontroller.text);*/
                           }
                         )
                       ],

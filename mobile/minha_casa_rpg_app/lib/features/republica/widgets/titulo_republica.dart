@@ -20,7 +20,7 @@ class TituloRepublica extends StatelessWidget {
           TextSpan(
             text: l10n.republicaRepublicaTitle,
             style: TextStyle(
-              color: Theme.of(context).colorScheme.primary
+              color: Theme.of(context).colorScheme.secondary
             )
           ),
           TextSpan(

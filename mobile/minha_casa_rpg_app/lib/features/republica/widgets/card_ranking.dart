@@ -5,11 +5,13 @@ class CardRanking extends StatelessWidget {
   final String nomeUsuario;
   final int xp;
   final double scaleImage;
+  final int cor;
 
   const CardRanking({
     super.key,
     required this.path,
     required this.nomeUsuario,
+    required this.cor,
     required this.xp,
     required this.scaleImage
     });
@@ -23,6 +25,7 @@ class CardRanking extends StatelessWidget {
           Material(
             borderRadius: BorderRadius.circular(12),
             clipBehavior: Clip.antiAlias,
+            color: Color(cor),
             elevation: 5,
             child: Image.asset(
               path,

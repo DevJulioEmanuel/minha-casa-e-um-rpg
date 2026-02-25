@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
         ),
         colorScheme: const ColorScheme.light(
           //brightness: brightness, 
-          primary: Color(0xFF77B882), 
+          primary: Color(0xFF7CA391), 
           //onPrimary: onPrimary,   
           secondary: Color(0xFF153968), 
           //onSecondary: onSecondary, 

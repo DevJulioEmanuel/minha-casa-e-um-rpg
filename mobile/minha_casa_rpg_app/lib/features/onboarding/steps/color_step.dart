@@ -4,7 +4,7 @@ import 'package:minha_casa_rpg_app/features/avatares/avatar_size.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/color_repository.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/avatar_view_onboarding.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/rpg_step_buttom.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class ColorStep extends ConsumerWidget {
   final VoidCallback onNext, onPrevious;

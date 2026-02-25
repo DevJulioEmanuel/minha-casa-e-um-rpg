@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/atividades_modelfake.dart';
+import 'package:minha_casa_rpg_app/db_fake/atividades_modelfake.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/bottomsheets_stats.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/buttom_bottomsheets.dart';
 
@@ -31,12 +31,15 @@ class BottomsheetsDetails extends StatelessWidget {
             // NOME E FOTO DO USUARIO
             Row(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(atividade.usuario.corUsuario),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                   child: Image.asset(
                   atividade.usuario.pathImage,
-                  width: 30 * scaleImage,
-                  height: 30 * scaleImage,
+                  width: 32 * scaleImage,
+                  height: 32 * scaleImage,
                   filterQuality: FilterQuality.none,
                   fit: BoxFit.fill,
                   )

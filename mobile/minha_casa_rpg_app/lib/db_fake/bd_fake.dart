@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/atividades_modelfake.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/status_tarefa.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/tipo_tarefa.dart';
-import 'package:minha_casa_rpg_app/features/republica/data/usuario_modelfake.dart';
+import 'package:minha_casa_rpg_app/features/avatares/data/color_repository.dart';
+import 'package:minha_casa_rpg_app/db_fake/atividades_modelfake.dart';
+import 'package:minha_casa_rpg_app/db_fake/status_tarefa.dart';
+import 'package:minha_casa_rpg_app/db_fake/tipo_tarefa.dart';
+import 'package:minha_casa_rpg_app/db_fake/usuario_modelfake.dart';
 
 final atividades = [
   AtividadesModelFake(
@@ -78,25 +79,25 @@ final usuarios = [
   UsuarioModelfake(
     nomeUsuario: "Julio Emanuel",
     xp: 3500,
-    pathImage: 'assets/images/meu_avatar.png',
-    corUsuario: Color(0xfff5FA7CD).value,
+    pathImage: 'assets/images/avatar/meu_avatar.png',
+    corUsuario: ColorRepository.colors[8].color.value,
   ),
   UsuarioModelfake(
     nomeUsuario: "Arthur Lellis",
     xp: 2300,
-    pathImage: 'assets/images/meu_avatar2.png',
-    corUsuario: Color(0xFFA58FCE).value,
+    pathImage: 'assets/images/avatar/meu_avatar2.png',
+    corUsuario: ColorRepository.colors[5].color.value,
   ),
   UsuarioModelfake(
     nomeUsuario: "Kratos",
     xp: 500,
-    pathImage: 'assets/images/meu_avatar3.png',
-    corUsuario: const Color(0xFF77B882).value, 
+    pathImage: 'assets/images/avatar/meu_avatar3.png',
+    corUsuario: ColorRepository.colors[7].color.value,
   ),
   UsuarioModelfake(
     nomeUsuario: "Atreus da Silva",
     xp: 25,
-    pathImage: 'assets/images/meu_avatar4.png',
-    corUsuario: Color(0xFFB1A043).value, 
+    pathImage: 'assets/images/avatar/meu_avatar4.png',
+    corUsuario: ColorRepository.colors[11].color.value,
   )
 ];

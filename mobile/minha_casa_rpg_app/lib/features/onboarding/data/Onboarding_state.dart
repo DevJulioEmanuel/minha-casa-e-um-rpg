@@ -12,8 +12,8 @@ class OnboardingState {
     this.nome,
     this.avatar,
     this.cor,
-    String? nomeRepublica,
-    String? codigoRepublica
+    this.nomeRepublica,
+    this.codigoRepublica
   });
 
   OnboardingState copyWith({

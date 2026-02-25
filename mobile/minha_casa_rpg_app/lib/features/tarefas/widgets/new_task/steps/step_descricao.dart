@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/rpg_step_buttom.dart';
+import 'package:go_router/go_router.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class StepDescricao extends StatelessWidget {
   final ValueChanged<String> onNext;
@@ -48,7 +49,9 @@ class StepDescricao extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 24),
-        RpgStepButtom(texto: "Próximo", function: () => onNext(controller.text))
+        RpgStepButtom(texto: "PRÓXIMO", function: () => onNext(controller.text)),
+        const SizedBox(height: 16),
+        RpgStepButtom(texto: "CANCELAR", color: Theme.of(context).colorScheme.error, function: context.pop)
       ],
     );
   }
