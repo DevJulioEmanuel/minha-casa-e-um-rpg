@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:minha_casa_rpg_app/shared/enum/avatar_size.dart';
+import 'package:minha_casa_rpg_app/features/avatares/avatar_view.dart';
 
 class CardRanking extends StatelessWidget {
   final String path;
   final String nomeUsuario;
   final int xp;
-  final double scaleImage;
   final int cor;
 
   const CardRanking({
@@ -13,7 +14,6 @@ class CardRanking extends StatelessWidget {
     required this.nomeUsuario,
     required this.cor,
     required this.xp,
-    required this.scaleImage
     });
 
   @override
@@ -27,15 +27,9 @@ class CardRanking extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             color: Color(cor),
             elevation: 5,
-            child: Image.asset(
-              path,
-              width: 48 * scaleImage * 1.25,
-              height: 48 * scaleImage * 1.25,
-              filterQuality: FilterQuality.none,
-              fit: BoxFit.fill,
-            ),
+            child: AvatarView(path: path, avatarSize: AvatarSize.medium)
           ),
-          SizedBox(width: scaleImage*15),
+          SizedBox(width: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,

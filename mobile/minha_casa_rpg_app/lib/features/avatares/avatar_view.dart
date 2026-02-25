@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/avatares/avatar_size.dart';
+import 'package:minha_casa_rpg_app/shared/enum/avatar_size.dart';
 
 class AvatarView extends StatelessWidget {
   final String path;
@@ -15,7 +15,7 @@ class AvatarView extends StatelessWidget {
       case AvatarSize.medium:
         return width*0.2;
       case AvatarSize.small:
-        return width*0.12;
+        return width*0.15;
     }
   }
 

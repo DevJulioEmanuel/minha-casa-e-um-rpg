@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:minha_casa_rpg_app/core/network/http_client.dart';
 
-class WelcomeService {
+class AuthService {
   Future<Map<String, dynamic>> register(String email, String password) async {
     final response = await HttpClient.post(
       "/user",

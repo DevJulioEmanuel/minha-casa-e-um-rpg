@@ -69,6 +69,7 @@ class _DialogNewtask extends State<DialogNewtask> {
           tipo: tipo,
           nivel: nivel,
           data: data,
+          onBack: back,
         );
     }
   }

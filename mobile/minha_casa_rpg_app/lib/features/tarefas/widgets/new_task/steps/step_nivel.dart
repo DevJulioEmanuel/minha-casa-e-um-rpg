@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/db_fake/nivel_tarefa.dart';
+import 'package:go_router/go_router.dart';
+import 'package:minha_casa_rpg_app/shared/enum/nivel_tarefa.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/buttom_no_cor.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class StepNivel extends StatelessWidget {
@@ -44,7 +46,9 @@ class StepNivel extends StatelessWidget {
           ],
         ),
         SizedBox(height: 18),
-        RpgStepButtom(texto: "VOLTAR", function: onBack)
+        RpgStepButtom(texto: "VOLTAR", function: onBack),
+        SizedBox(height: 18),
+        ButtomNoCor(texto: "CANCELAR", color: Colors.red, function: context.pop)
       ],
     );
   }

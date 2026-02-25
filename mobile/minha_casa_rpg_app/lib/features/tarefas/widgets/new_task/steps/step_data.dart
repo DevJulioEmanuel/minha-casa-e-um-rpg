@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/buttom_no_cor.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class StepData extends StatelessWidget {
@@ -34,7 +36,9 @@ class StepData extends StatelessWidget {
           ),
         ),
         SizedBox(height: 24),
-        RpgStepButtom(texto: "VOLTAR", function: onBack)
+        RpgStepButtom(texto: "VOLTAR", function: onBack),
+        SizedBox(height: 18),
+        ButtomNoCor(texto: "CANCELAR", color: Colors.red, function: context.pop)
       ],
     );
   }

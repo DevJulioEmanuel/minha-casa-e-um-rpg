@@ -5,9 +5,9 @@ import 'package:minha_casa_rpg_app/features/onboarding/screens/onboarding_screen
 import 'package:minha_casa_rpg_app/features/perfil/screens/perfil_screen.dart';
 import 'package:minha_casa_rpg_app/features/republica/screens/republica_screen.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/screens/tarefas_screen.dart';
-import 'package:minha_casa_rpg_app/features/welcome/screens/cadastro_screen.dart';
-import 'package:minha_casa_rpg_app/features/welcome/screens/login_screen.dart';
-import 'package:minha_casa_rpg_app/features/welcome/screens/welcome_screen.dart';
+import 'package:minha_casa_rpg_app/features/auth/screens/cadastro_screen.dart';
+import 'package:minha_casa_rpg_app/features/auth/screens/login_screen.dart';
+import 'package:minha_casa_rpg_app/features/auth/screens/welcome_screen.dart';
 import 'package:minha_casa_rpg_app/navigation/main_navigation.dart';
 
 final routes = GoRouter(

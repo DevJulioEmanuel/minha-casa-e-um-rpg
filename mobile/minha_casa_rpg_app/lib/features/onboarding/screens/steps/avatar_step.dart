@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/avatar_repository.dart';
-import 'package:minha_casa_rpg_app/features/avatares/avatar_size.dart';
+import 'package:minha_casa_rpg_app/shared/enum/avatar_size.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/avatar_view_onboarding.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:minha_casa_rpg_app/features/welcome/provider/auth_controller.dart';
-import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_google.dart';
-import 'package:minha_casa_rpg_app/features/welcome/widgets/buttom_welcome.dart';
-import 'package:minha_casa_rpg_app/features/welcome/widgets/textfield_welcome.dart';
-import 'package:minha_casa_rpg_app/features/welcome/widgets/titulo_welcome.dart';
+import 'package:minha_casa_rpg_app/features/auth/provider/auth_controller.dart';
+import 'package:minha_casa_rpg_app/features/auth/widgets/buttom_google.dart';
+import 'package:minha_casa_rpg_app/features/auth/widgets/buttom_welcome.dart';
+import 'package:minha_casa_rpg_app/features/auth/widgets/textfield_welcome.dart';
+import 'package:minha_casa_rpg_app/features/auth/widgets/titulo_welcome.dart';
 import 'package:flutter/gestures.dart';
 
 

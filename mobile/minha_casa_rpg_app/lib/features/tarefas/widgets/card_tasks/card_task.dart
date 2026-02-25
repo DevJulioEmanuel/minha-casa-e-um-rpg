@@ -58,7 +58,6 @@ class CardTask extends StatelessWidget {
         path: atividade.usuario.pathImage, 
         texto: atividade.texto, 
         corUsuario: Color(atividade.usuario.corUsuario), 
-        scaleImage: scaleImage
       ),
     );
   }

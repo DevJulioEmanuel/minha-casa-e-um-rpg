@@ -1,15 +1,15 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
-import 'package:minha_casa_rpg_app/features/welcome/data/models/user_model.dart';
-import 'package:minha_casa_rpg_app/features/welcome/services/welcome_service.dart';
+import 'package:minha_casa_rpg_app/features/auth/data/models/user_model.dart';
+import 'package:minha_casa_rpg_app/features/auth/services/auth_service.dart';
 
 final authControllerProvider =
     StateNotifierProvider<AuthController, AsyncValue<User?>>(
-  (ref) => AuthController(WelcomeService()),
+  (ref) => AuthController(AuthService()),
 );
 
 class AuthController extends StateNotifier<AsyncValue<User?>> {
-  final WelcomeService remote;
+  final AuthService remote;
 
   AuthController(this.remote) : super(const AsyncValue.data(null));
 

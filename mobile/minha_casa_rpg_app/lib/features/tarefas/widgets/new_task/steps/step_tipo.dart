@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:minha_casa_rpg_app/db_fake/tipo_tarefa.dart';
+import 'package:minha_casa_rpg_app/shared/enum/tipo_tarefa.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/buttom_no_cor.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
@@ -59,8 +59,8 @@ class StepTipo extends StatelessWidget {
         ),
         SizedBox(height: 18),
         RpgStepButtom(texto: "VOLTAR", function: onBack),
-        SizedBox(height: 12),
-        ButtomNoCor(texto: "CANCELAR", color: Theme.of(context).colorScheme.error, function: context.pop)
+        SizedBox(height: 18),
+        ButtomNoCor(texto: "CANCELAR", color: Colors.red, function: context.pop)
       ],
     );
   }

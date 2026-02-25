@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/bottomsheets_stats.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/buttom_no_cor.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class StepConfirmar extends StatelessWidget {
@@ -7,6 +9,7 @@ class StepConfirmar extends StatelessWidget {
   final String tipo;
   final String nivel;
   final DateTime? data;
+  final VoidCallback onBack;
 
   const StepConfirmar({
     super.key,
@@ -14,6 +17,7 @@ class StepConfirmar extends StatelessWidget {
     required this.tipo,
     required this.nivel,
     required this.data,
+    required this.onBack
   });
 
   @override
@@ -47,7 +51,8 @@ class StepConfirmar extends StatelessWidget {
           texto: nivel,
           scaleImage: 1
         ),
-        RpgStepButtom(texto: "CRIAR MISSÃO", function: () => Navigator.pop(context))
+        RpgStepButtom(texto: "CRIAR MISSÃO", function: () => Navigator.pop(context)),
+        ButtomNoCor(texto: "VOLTAR", color: Colors.red, function: onBack)
       ],
     );
   }

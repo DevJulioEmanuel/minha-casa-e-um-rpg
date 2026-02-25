@@ -1,5 +1,5 @@
 import 'package:minha_casa_rpg_app/core/network/http_client.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/data/Onboarding_state.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/data/onboarding_state.dart';
 
 class OnboardingService {
   Future<bool> criarUsuario(OnboardingState state) async {
@@ -17,7 +17,7 @@ class OnboardingService {
     return true;
   }
 
-  Future<void> CriarRepublica(OnboardingState state) async {
+  Future<void> criarRepublica(OnboardingState state) async {
     final response = await HttpClient.post(
       "/republic",
       {
@@ -29,7 +29,7 @@ class OnboardingService {
     }
   }
 
-  Future<void> EntrarRepublica(OnboardingState state) async {
+  Future<void> entrarRepublica(OnboardingState state) async {
     final response = await HttpClient.patch(
       "/user/7dcc527d-f823-44f6-a2aa-42bbd3652718/join",
       {

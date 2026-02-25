@@ -1,5 +1,5 @@
-import 'package:minha_casa_rpg_app/db_fake/status_tarefa.dart';
-import 'package:minha_casa_rpg_app/db_fake/tipo_tarefa.dart';
+import 'package:minha_casa_rpg_app/shared/enum/status_tarefa.dart';
+import 'package:minha_casa_rpg_app/shared/enum/tipo_tarefa.dart';
 import 'package:minha_casa_rpg_app/db_fake/usuario_modelfake.dart';
 
 class AtividadesModelFake {

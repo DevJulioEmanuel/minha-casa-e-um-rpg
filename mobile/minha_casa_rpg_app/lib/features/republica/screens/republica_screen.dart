@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minha_casa_rpg_app/db_fake/bd_fake.dart';
-import 'package:minha_casa_rpg_app/features/avatares/avatar_size.dart';
-import 'package:minha_casa_rpg_app/features/avatares/avatar_view_onboarding.dart';
+import 'package:minha_casa_rpg_app/shared/enum/avatar_size.dart';
+import 'package:minha_casa_rpg_app/features/avatares/avatar_view.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/card_atividade.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/card_ranking.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/divider_screens.dart';
@@ -24,8 +24,6 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
   Widget build(BuildContext context) {
     final heightScreen = MediaQuery.of(context).size.height;
     final widthScreen = MediaQuery.of(context).size.width;
-    final scaleBigSprite = widthScreen*0.014;
-    final scaleSmallSprite = widthScreen*0.003;
 
     final l10n = AppLocalizations.of(context)!;
 
@@ -102,7 +100,6 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                             path: atividade.usuario.pathImage,
                             texto: atividade.texto, 
                             corUsuario: Color(atividade.usuario.corUsuario),
-                            scaleImage: scaleSmallSprite,
                           );
                         },
                         childCount: atividades.length
@@ -127,7 +124,6 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                             nomeUsuario: usuario.nomeUsuario,
                             cor: usuario.corUsuario,
                             xp: usuario.xp,
-                            scaleImage: scaleSmallSprite,
                           );
                         },
                         childCount: usuarios.length
