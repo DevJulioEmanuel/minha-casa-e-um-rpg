@@ -12,12 +12,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("user")
 @RequiredArgsConstructor
-public class UserController {
+public class UserController implements  GenericController{
 
     private final UserService service;
     private final UserMapper mapper;
@@ -26,10 +27,8 @@ public class UserController {
     public ResponseEntity<UserResponseDTO> create(@RequestBody @Valid UserDTO dto){
         User user = mapper.toEntity(dto);
         User savedUser = service.save(user);
-
-        UserResponseDTO responseDTO = mapper.toResponse(savedUser);
-
-        return ResponseEntity.ok(responseDTO);
+        URI location = gerarHeaderLocation(user.getId());
+        return ResponseEntity.created(location).build();
     }
 
     @PatchMapping("/{id}/profile")

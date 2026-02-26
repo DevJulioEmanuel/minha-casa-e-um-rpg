@@ -29,12 +29,4 @@ public class Republic {
 
     @OneToMany(mappedBy = "republic")
     private List<Task> tasks;
-
-    @PrePersist
-    public void generateInviteCode() {
-        if (this.inviteCode == null) {
-            this.inviteCode = java.util.UUID.randomUUID().toString()
-                    .substring(0, 6).toUpperCase();
-        }
-    }
 }

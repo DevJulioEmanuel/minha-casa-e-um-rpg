@@ -1,4 +1,6 @@
 package com.repquest.api.dto;
 
-public record JoinRequestDTO(String inviteCode) {
+import jakarta.validation.constraints.NotBlank;
+
+public record JoinRequestDTO(@NotBlank(message = "Campo obrigatório") String inviteCode) {
 }
