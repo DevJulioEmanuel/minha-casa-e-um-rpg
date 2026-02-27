@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:minha_casa_rpg_app/db_fake/bd_fake.dart';
+import 'package:minha_casa_rpg_app/features/tarefas/provider/tarefas_provider.dart';
 import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/divider_screens.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/buttom_newtask.dart';
@@ -10,17 +10,15 @@ import 'package:minha_casa_rpg_app/features/tarefas/widgets/filtro_widgets.dart'
 import 'package:minha_casa_rpg_app/shared/widgets/titulo_screen.dart';
 
 
-class TarefasScreen extends ConsumerStatefulWidget{
+class TarefasScreen extends ConsumerWidget{
   const TarefasScreen({super.key});
 
   @override
-  ConsumerState<TarefasScreen> createState() => _TarefasScreenState();
-}
-
-class _TarefasScreenState extends ConsumerState<TarefasScreen> {
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final estado = ref.watch(tarefasProvider);  
+    final filtroAtual = estado.statusTarefa;
+    final tarefasFiltradas = estado.tarefas
+      .where((a) => a.statusTarefa == filtroAtual).toList();
     final heightScreen = MediaQuery.of(context).size.height;
     final widthScreen = MediaQuery.of(context).size.width;
     //final scaleBigSprite = widthScreen*0.014;
@@ -56,14 +54,16 @@ class _TarefasScreenState extends ConsumerState<TarefasScreen> {
                     SliverList(
                       delegate: SliverChildBuilderDelegate(
                         (context, index) { 
-                          final atividade = atividades[index];
-                          return CardTask(
-                            atividade: atividade,
-                            context: context,
+                          final tarefa = tarefasFiltradas[index];
+                          if (tarefa.statusTarefa == filtroAtual) {
+                            return CardTask(
+                            atividade: tarefa,
                             scaleImage: scaleSmallSprite
-                          );
+                            );
+                          }
+                          return null;
                       },
-                      childCount: atividades.length
+                      childCount: tarefasFiltradas.length
                       )
                     )
                   ]

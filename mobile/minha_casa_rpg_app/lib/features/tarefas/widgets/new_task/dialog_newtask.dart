@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_confirmar.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_data.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_descricao.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_nivel.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_tipo.dart';
+import 'package:minha_casa_rpg_app/shared/enum/tipo_tarefa.dart';
 
 class DialogNewtask extends StatefulWidget {
   const DialogNewtask({super.key});
@@ -17,9 +17,9 @@ class _DialogNewtask extends State<DialogNewtask> {
   int step = 0;
 
   String descricao = "";
-  String tipo = "";
+  TipoTarefa tipo = TipoTarefa.pontual;
   String nivel = "";
-  DateTime? data;
+  DateTime data = DateTime.now();
   
   void next() => setState(() => step++);
   void back() => setState(() => step--);

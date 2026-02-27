@@ -70,7 +70,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset('assets/images/panteao_grego.png',
+            child: Image.asset('assets/images/background_pixelart_3.png',
             fit: BoxFit.cover,
             )
           ),

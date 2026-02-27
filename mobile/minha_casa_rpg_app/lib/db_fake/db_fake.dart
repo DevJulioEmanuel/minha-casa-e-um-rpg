@@ -1,11 +1,11 @@
 import 'package:minha_casa_rpg_app/features/avatares/data/color_repository.dart';
-import 'package:minha_casa_rpg_app/db_fake/atividades_modelfake.dart';
+import 'package:minha_casa_rpg_app/db_fake/tarefas_modelfake.dart';
 import 'package:minha_casa_rpg_app/shared/enum/status_tarefa.dart';
 import 'package:minha_casa_rpg_app/shared/enum/tipo_tarefa.dart';
 import 'package:minha_casa_rpg_app/db_fake/usuario_modelfake.dart';
 
-final atividades = [
-  AtividadesModelFake(
+final List<TarefasModelfake> tarefas = [
+  TarefasModelfake(
     texto: 'Lavar a louça da cozinha',
     usuario: usuarios[0],
     dataCriada: DateTime.now(),
@@ -16,7 +16,7 @@ final atividades = [
     statusTarefa: StatusTarefa.pendente,
   ),
 
-  AtividadesModelFake(
+  TarefasModelfake(
     texto: 'Tirar o lixo da casa',
     usuario: usuarios[2],
     dataCriada: DateTime.now(),
@@ -24,10 +24,10 @@ final atividades = [
     xp: 40,
     coins: 8,
     tipoTarefa: TipoTarefa.fixa,
-    statusTarefa: StatusTarefa.pendente,
+    statusTarefa: StatusTarefa.concluida,
   ),
 
-  AtividadesModelFake(
+  TarefasModelfake(
     texto: 'Limpar o banheiro',
     usuario: usuarios[1],
     dataCriada: DateTime.now(),
@@ -38,7 +38,7 @@ final atividades = [
     statusTarefa: StatusTarefa.pendente,
   ),
 
-  AtividadesModelFake(
+  TarefasModelfake(
     texto: 'Organizar a geladeira',
     usuario: usuarios[3],
     dataCriada: DateTime.now(),
@@ -46,10 +46,10 @@ final atividades = [
     xp: 80,
     coins: 15,
     tipoTarefa: TipoTarefa.pontual,
-    statusTarefa: StatusTarefa.pendente,
+    statusTarefa: StatusTarefa.concluida,
   ),
 
-  AtividadesModelFake(
+  TarefasModelfake(
     texto: 'Faxina geral da sala',
     usuario: usuarios[0],
     dataCriada: DateTime.now(),
@@ -57,10 +57,10 @@ final atividades = [
     xp: 200,
     coins: 50,
     tipoTarefa: TipoTarefa.coletiva,
-    statusTarefa: StatusTarefa.pendente,
+    statusTarefa: StatusTarefa.atrasada,
   ),
 
-  AtividadesModelFake(
+  TarefasModelfake(
     texto: 'Cozinhar o almoço de domingo',
     usuario: usuarios[1],
     dataCriada: DateTime.now(),
@@ -68,7 +68,7 @@ final atividades = [
     xp: 90,
     coins: 20,
     tipoTarefa: TipoTarefa.desafio,
-    statusTarefa: StatusTarefa.pendente,
+    statusTarefa: StatusTarefa.atrasada,
   ),
 ];
 

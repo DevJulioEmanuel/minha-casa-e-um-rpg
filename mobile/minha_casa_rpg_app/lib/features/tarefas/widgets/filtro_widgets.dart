@@ -1,64 +1,52 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:minha_casa_rpg_app/features/tarefas/provider/tarefas_provider.dart';
 import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
+import 'package:minha_casa_rpg_app/shared/enum/status_tarefa.dart';
 
-class FiltroWidgets extends StatefulWidget {
+class FiltroWidgets extends ConsumerWidget {
   final double widthScreen, heightScreen;
 
-  const FiltroWidgets({super.key, required this.widthScreen, required this.heightScreen});
+  const FiltroWidgets({
+    super.key, 
+    required this.widthScreen, 
+    required this.heightScreen
+  });
 
-  @override
-  State<StatefulWidget> createState() => _FiltroWidgets();
-}
+  void proximo(WidgetRef ref, StatusTarefa atual) {
+    final lista = StatusTarefa.values;
+    final index = lista.indexOf(atual);
+    final novo = lista[(index + 1) % lista.length];
 
-class _FiltroWidgets extends State<FiltroWidgets> {
-
-  int indexAtual = 0;
-  int direcao = 1;
-
-  final List<TipoFiltro> filtros = [
-    TipoFiltro.pendentes,
-    TipoFiltro.atrasadas,
-    TipoFiltro.concluidas,
-  ];
-
-  void proximo() {
-    setState(() {
-      direcao = 1;
-      indexAtual++;
-      if (indexAtual>2) {
-        indexAtual = 0;
-      }
-    });
+    ref.read(tarefasProvider.notifier).setFiltro(novo);
   }
 
-  void anterior() {
-    setState(() {
-      direcao = -1;
-      indexAtual--;
-      if (indexAtual<0) {
-        indexAtual = 2;
-      }
-    });
+  void anterior(WidgetRef ref, StatusTarefa atual) {
+    final lista = StatusTarefa.values;
+    final index = lista.indexOf(atual);
+    final novo = lista[(index - 1 + lista.length) % lista.length];
+    ref.read(tarefasProvider.notifier).setFiltro(novo);
   }
 
-  String traduzirFiltro(TipoFiltro filtro, AppLocalizations l10n) {
-  switch (filtro) {
-    case TipoFiltro.pendentes:
+  String traduzirFiltro(StatusTarefa status, AppLocalizations l10n) {
+  switch (status) {
+    case StatusTarefa.pendente:
       return l10n.tarefasFiltroPendentes;
-    case TipoFiltro.atrasadas:
+    case StatusTarefa.atrasada:
       return l10n.tarefasFiltroAtrasadas;
-    case TipoFiltro.concluidas:
+    case StatusTarefa.concluida:
       return l10n.tarefasFiltroConcluidas;
   }
 }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-
+    final estado = ref.watch(tarefasProvider);
+    final filtroAtual = estado.statusTarefa;
     return Container(
-      width: widget.widthScreen*0.8,
-      height: widget.heightScreen*0.04,
+      width: widthScreen*0.8,
+      height: heightScreen*0.04,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(15),
@@ -68,61 +56,34 @@ class _FiltroWidgets extends State<FiltroWidgets> {
         )]
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: widget.widthScreen*0.05),
+        padding: EdgeInsets.symmetric(horizontal: widthScreen*0.05),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GestureDetector(
-              onTap: anterior,
-              child: Icon(Icons.west, size: widget.widthScreen*0.06, color: Colors.white),
+              onTap: () { anterior(ref, filtroAtual); },
+              child: Icon(Icons.west, size: widthScreen*0.06, color: Colors.white),
             ),
-            SizedBox(width: widget.widthScreen*0.05),
+            SizedBox(width: widthScreen*0.05),
             Expanded(
               child: Center(
-                child: AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 350),
-                  switchInCurve: Curves.easeOutCubic,
-                  switchOutCurve: Curves.easeInCubic,
-                  transitionBuilder: (child, animation) {
-                    final isEntering = child.key == ValueKey(filtros[indexAtual]);
-                
-                    final offsetAnimation = Tween<Offset>(
-                      begin: Offset(
-                        isEntering ? direcao.toDouble() : -direcao.toDouble(), 0
-                      ),
-                      end: Offset.zero
-                    ).animate(animation);
-                    return ClipRect(
-                      child: SlideTransition(
-                        position: offsetAnimation,
-                        child: FadeTransition(opacity: animation, child: child),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    traduzirFiltro(filtros[indexAtual], l10n),
-                    key: ValueKey(filtros[indexAtual]),
-                    style: Theme.of(context).textTheme.bodyMedium
-                      ?.copyWith(fontSize: widget.widthScreen*0.05, color: Colors.white)
-                  )
+                child: Text(
+                  traduzirFiltro(filtroAtual, l10n),
+                  key: ValueKey(filtroAtual),
+                  style: Theme.of(context).textTheme.bodyMedium
+                    ?.copyWith(fontSize: widthScreen*0.05, color: Colors.white)
                 ),
               ),
             ),
-            SizedBox(width: widget.widthScreen*0.05),
+            SizedBox(width: widthScreen*0.05),
             GestureDetector(
-              onTap: proximo,
-              child: Icon(Icons.east, size: widget.widthScreen*0.06, color: Colors.white),
+              onTap: () { proximo(ref, filtroAtual); },
+              child: Icon(Icons.east, size: widthScreen*0.06, color: Colors.white),
             ),
           ],
         ),
       ),
     );
   }
-}
-
-enum TipoFiltro {
-  pendentes,
-  atrasadas,
-  concluidas,
 }

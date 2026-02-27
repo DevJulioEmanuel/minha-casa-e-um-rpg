@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:minha_casa_rpg_app/db_fake/bd_fake.dart';
+import 'package:minha_casa_rpg_app/db_fake/db_fake.dart';
 import 'package:minha_casa_rpg_app/shared/enum/avatar_size.dart';
 import 'package:minha_casa_rpg_app/features/avatares/avatar_view.dart';
 import 'package:minha_casa_rpg_app/features/republica/widgets/card_atividade.dart';
@@ -95,14 +95,14 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                     SliverList(
                       delegate: SliverChildBuilderDelegate(
                         (context, index) {
-                          final atividade = atividades[index];
+                          final atividade = tarefas[index];
                           return CardAtividade(
                             path: atividade.usuario.pathImage,
                             texto: atividade.texto, 
                             corUsuario: Color(atividade.usuario.corUsuario),
                           );
                         },
-                        childCount: atividades.length
+                        childCount: tarefas.length
                       )
                     ),
                     SliverToBoxAdapter(

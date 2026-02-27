@@ -5,7 +5,7 @@ import 'package:minha_casa_rpg_app/shared/widgets/buttom_no_cor.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class StepTipo extends StatelessWidget {
-  final Function(String) onNext;
+  final Function(TipoTarefa) onNext;
   final VoidCallback onBack;
 
   const StepTipo({super.key, required this.onNext, required this.onBack});
@@ -33,27 +33,27 @@ class StepTipo extends StatelessWidget {
             ChoiceChip(
               label: Text(TipoTarefa.fixa.name),
               selected: false,
-              onSelected: (_) => onNext(TipoTarefa.fixa.name),
+              onSelected: (_) => onNext(TipoTarefa.fixa),
             ),
             ChoiceChip(
               label: Text(TipoTarefa.pontual.name),
               selected: false,
-              onSelected: (_) => onNext(TipoTarefa.fixa.name),
+              onSelected: (_) => onNext(TipoTarefa.fixa),
             ),
             ChoiceChip(
               label: Text(TipoTarefa.desafio.name),
               selected: false,
-              onSelected: (_) => onNext(TipoTarefa.fixa.name),
+              onSelected: (_) => onNext(TipoTarefa.fixa),
             ),
             ChoiceChip(
               label: Text(TipoTarefa.coletiva.name),
               selected: false,
-              onSelected: (_) => onNext(TipoTarefa.fixa.name),
+              onSelected: (_) => onNext(TipoTarefa.fixa),
             ),
             ChoiceChip(
               label: Text(TipoTarefa.revezamento.name),
               selected: false,
-              onSelected: (_) => onNext(TipoTarefa.coletiva.name),
+              onSelected: (_) => onNext(TipoTarefa.coletiva),
             ),
           ],
         ),

@@ -3,7 +3,7 @@ import 'package:minha_casa_rpg_app/features/avatares/data/avatar_model.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/avatar_repository.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/color_model.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/color_repository.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/data/onboarding_state.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_state.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/services/onboarding_service.dart';
 
 final onboardingProvider = StateNotifierProvider<OnboardingProvider, OnboardingState>(

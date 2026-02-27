@@ -1,5 +1,5 @@
 import 'package:minha_casa_rpg_app/core/network/http_client.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/data/onboarding_state.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_state.dart';
 
 class OnboardingService {
   Future<bool> criarUsuario(OnboardingState state) async {

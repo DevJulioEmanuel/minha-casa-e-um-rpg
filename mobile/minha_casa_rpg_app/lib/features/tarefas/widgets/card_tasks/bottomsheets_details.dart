@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:minha_casa_rpg_app/db_fake/atividades_modelfake.dart';
+import 'package:minha_casa_rpg_app/db_fake/tarefas_modelfake.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/bottomsheets_stats.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/buttom_bottomsheets.dart';
 
 class BottomsheetsDetails extends StatelessWidget {
-  final AtividadesModelFake atividade;
+  final TarefasModelfake atividade;
   final double scaleImage;
   const BottomsheetsDetails({
     super.key,

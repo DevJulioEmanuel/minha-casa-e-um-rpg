@@ -11,8 +11,9 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Image.asset('assets/images/panteao_grego.png',
+          Positioned.fill(  
+            child: Image.asset('assets/images/background_pixelart_3.png',   
+            filterQuality: FilterQuality.none,
             fit: BoxFit.cover,
             )
           ),
