@@ -34,11 +34,10 @@ class MyApp extends StatelessWidget {
       title: 'Minha Casa RPG',
       theme: ThemeData(
         useMaterial3: true,
-        
-        fontFamily: 'Cinzel',
+        fontFamily: 'Dalek',
         textTheme: const TextTheme(
           headlineLarge: TextStyle(
-            fontFamily: 'Cinzel_Decorative',
+            fontFamily: 'Dalek',
             fontSize: 42,
             fontWeight: FontWeight.w700,
             color: Color(0xFF153968),
@@ -56,13 +55,13 @@ class MyApp extends StatelessWidget {
             fontSize: 18,
           ),
           bodyMedium: TextStyle(
-            fontSize: 16,
+            fontSize: 20,
           ),
           bodySmall: TextStyle(
             fontSize: 13,
           ),
         ).apply(
-          bodyColor: Color(0xFF153968)
+          bodyColor: Color.fromARGB(255, 0, 0, 0)
         ),
         colorScheme: const ColorScheme.light(
           //brightness: brightness, 

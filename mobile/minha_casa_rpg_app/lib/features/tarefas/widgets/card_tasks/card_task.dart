@@ -27,14 +27,13 @@ class CardTask extends StatelessWidget {
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: Color(0xFFF3EFE6),
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(24),
               ),
               image: DecorationImage(
                 image: AssetImage("assets/texture/textura_papel.png"),
                 fit: BoxFit.cover,
-                opacity: 0.2
+                opacity: 1
               )
             ),
             child: Wrap(

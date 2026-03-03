@@ -11,7 +11,7 @@ import 'package:minha_casa_rpg_app/features/auth/screens/welcome_screen.dart';
 import 'package:minha_casa_rpg_app/navigation/main_navigation.dart';
 
 final routes = GoRouter(
-  initialLocation: '/welcome',
+  initialLocation: '/republica',
   routes: [
     GoRoute(
       path: '/welcome',

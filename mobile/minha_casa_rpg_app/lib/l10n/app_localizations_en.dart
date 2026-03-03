@@ -42,7 +42,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tarefasFiltroPendentes => 'PENDING';
 
   @override
-  String get tarefasFiltroAtrasadas => 'OVERDUE';
+  String get tarefasFiltroAtrasadas => 'EXPIRED';
 
   @override
   String get tarefasFiltroConcluidas => 'COMPLETED';

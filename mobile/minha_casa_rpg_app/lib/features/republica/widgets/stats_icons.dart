@@ -22,7 +22,14 @@ class StatsIcons extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
-            borderRadius: BorderRadius.circular(12)
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                color: const Color.fromARGB(69, 0, 0, 0),
+                blurRadius: 10,
+                offset: Offset(0, 5), // posição da sombra
+              ),
+            ],
           ),
           child: Center(
             child: Text(

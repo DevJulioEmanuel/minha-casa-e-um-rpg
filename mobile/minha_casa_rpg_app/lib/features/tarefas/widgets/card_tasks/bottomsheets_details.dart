@@ -25,7 +25,7 @@ class BottomsheetsDetails extends StatelessWidget {
             SizedBox(height: scaleImage*10),
             Text(
               atividade.texto,
-              style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: 24)
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: 24, color: Colors.black)
             ),
             SizedBox(height: scaleImage*0.5),
             // NOME E FOTO DO USUARIO

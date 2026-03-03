@@ -12,7 +12,7 @@
     "tarefasTitle": "TASKS",
     "tarefasButtomNovaTarefa": "+ NEW TASK",
     "tarefasFiltroPendentes": "PENDING",
-    "tarefasFiltroAtrasadas": "OVERDUE",
+    "tarefasFiltroAtrasadas": "EXPIRED",
     "tarefasFiltroConcluidas": "COMPLETED"
 
 }

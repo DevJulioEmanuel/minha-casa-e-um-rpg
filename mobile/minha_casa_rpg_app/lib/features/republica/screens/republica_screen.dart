@@ -31,7 +31,7 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset('assets/images/background_nuvens2.png',
+            child: Image.asset('assets/images/background_nuvens_3.png',
             fit: BoxFit.cover,
             ) 
           ),
@@ -74,7 +74,14 @@ class _RepublicaScreenState extends ConsumerState<RepublicaScreen> {
                             child: Container(
                               decoration: BoxDecoration(
                                 color: Theme.of(context).colorScheme.primary,
-                                borderRadius: BorderRadius.circular(16)
+                                borderRadius: BorderRadius.circular(16),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: const Color.fromARGB(69, 0, 0, 0),
+                                    blurRadius: 10,
+                                    offset: Offset(0, 5), // posição da sombra
+                                  ),
+                                ],
                               ),
                               child: AvatarView(
                                 path: 'assets/images/avatar/meu_avatar2.png', 
