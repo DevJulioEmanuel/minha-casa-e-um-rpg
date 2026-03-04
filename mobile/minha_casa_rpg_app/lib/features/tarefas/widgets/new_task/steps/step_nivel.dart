@@ -5,7 +5,7 @@ import 'package:minha_casa_rpg_app/shared/widgets/buttom_no_cor.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class StepNivel extends StatelessWidget {
-  final Function(String) onNext;
+  final Function(NivelTarefa) onNext;
   final VoidCallback onBack;
 
   const StepNivel({super.key, required this.onNext, required this.onBack});
@@ -31,17 +31,17 @@ class StepNivel extends StatelessWidget {
             ChoiceChip(
               label: Text(NivelTarefa.facil.name),
               selected: false,
-              onSelected: (_) => onNext(NivelTarefa.facil.name),
+              onSelected: (_) => onNext(NivelTarefa.facil),
             ),
             ChoiceChip(
               label: Text(NivelTarefa.medio.name),
               selected: false,
-              onSelected: (_) => onNext(NivelTarefa.medio.name),
+              onSelected: (_) => onNext(NivelTarefa.medio),
             ),
             ChoiceChip(
               label: Text(NivelTarefa.dificil.name),
               selected: false,
-              onSelected: (_) => onNext(NivelTarefa.dificil.name),
+              onSelected: (_) => onNext(NivelTarefa.dificil),
             ),
           ],
         ),

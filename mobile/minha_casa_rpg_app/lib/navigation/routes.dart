@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:minha_casa_rpg_app/features/despesas/screens/despesas_screen.dart';
 import 'package:minha_casa_rpg_app/features/loja/screens/loja_screen.dart';

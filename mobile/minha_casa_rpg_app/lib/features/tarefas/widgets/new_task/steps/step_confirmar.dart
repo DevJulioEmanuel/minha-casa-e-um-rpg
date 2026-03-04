@@ -4,6 +4,7 @@ import 'package:minha_casa_rpg_app/db_fake/db_fake.dart';
 import 'package:minha_casa_rpg_app/db_fake/tarefas_modelfake.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/provider/tarefas_provider.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/bottomsheets_stats.dart';
+import 'package:minha_casa_rpg_app/shared/enum/nivel_tarefa.dart';
 import 'package:minha_casa_rpg_app/shared/enum/status_tarefa.dart';
 import 'package:minha_casa_rpg_app/shared/enum/tipo_tarefa.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/buttom_no_cor.dart';
@@ -12,7 +13,7 @@ import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 class StepConfirmar extends ConsumerWidget {
   final String descricao;
   final TipoTarefa tipo;
-  final String nivel;
+  final NivelTarefa nivel;
   final DateTime data;
   final VoidCallback onBack;
 
@@ -53,7 +54,7 @@ class StepConfirmar extends ConsumerWidget {
         ),
         BottomsheetsStats(
           path: 'assets/icons/nivel_tarefa.png', 
-          texto: nivel,
+          texto: nivel.name,
           scaleImage: 1
         ),
         RpgStepButtom(
@@ -61,12 +62,14 @@ class StepConfirmar extends ConsumerWidget {
           function: () {
             ref.read(tarefasProvider.notifier).criarTarefa(
               TarefasModelfake(
+                id: DateTime.timestamp().toString(),
                 texto: descricao, 
                 usuario: usuarios[0], 
                 dataCriada: DateTime.now(), 
                 dataPrevista: data, 
                 xp: 300, 
                 coins: 100, 
+                nivelTarefa: nivel,
                 tipoTarefa: tipo, 
                 statusTarefa: StatusTarefa.pendente
               )

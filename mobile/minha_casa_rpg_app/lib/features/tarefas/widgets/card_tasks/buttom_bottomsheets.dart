@@ -3,16 +3,19 @@ import 'package:flutter/material.dart';
 class ButtomBottomsheets extends StatelessWidget {
   final String texto;
   final Color cor;
+  final VoidCallback? function;
+
   const ButtomBottomsheets({
     super.key,
     required this.texto,
-    required this.cor
+    required this.cor,
+    required this.function
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: function,
       style: ElevatedButton.styleFrom(
         backgroundColor: cor,
         shape: RoundedRectangleBorder(

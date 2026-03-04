@@ -10,12 +10,13 @@ class CardTask extends StatelessWidget {
   const CardTask({
     super.key,
     required this.atividade,
-    required this.scaleImage
+    required this.scaleImage,
   });
 
   void openAtividade(BuildContext context) {
     showModalBottomSheet(
       context: context,
+      useRootNavigator: true,
       useSafeArea: true,
       showDragHandle: false,
       isScrollControlled: true,
@@ -23,7 +24,7 @@ class CardTask extends StatelessWidget {
       builder: (context) {
         return Padding(
           padding: EdgeInsets.only(
-            bottom: MediaQuery.of(context).viewInsets.bottom,
+            bottom: MediaQuery.of(context).padding.bottom,
           ),
           child: Container(
             decoration: BoxDecoration(
@@ -38,7 +39,7 @@ class CardTask extends StatelessWidget {
             ),
             child: Wrap(
               children: [ 
-                BottomsheetsDetails(atividade: atividade, scaleImage: scaleImage)
+                BottomsheetsDetails(idTarefa: atividade.id, scaleImage: scaleImage)
               ]
             ),
           )

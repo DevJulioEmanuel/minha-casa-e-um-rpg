@@ -24,8 +24,7 @@ class TarefasScreen extends ConsumerWidget{
     //final scaleBigSprite = widthScreen*0.014;
     final scaleSmallSprite = widthScreen*0.003;
     final l10n = AppLocalizations.of(context)!;
-    return Scaffold(
-      body: Stack(
+    return Stack(
         children: [
           Positioned.fill(
             child: Image.asset('assets/images/background_nuvens2.png',
@@ -57,8 +56,8 @@ class TarefasScreen extends ConsumerWidget{
                           final tarefa = tarefasFiltradas[index];
                           if (tarefa.statusTarefa == filtroAtual) {
                             return CardTask(
-                            atividade: tarefa,
-                            scaleImage: scaleSmallSprite
+                              atividade: tarefa,
+                              scaleImage: scaleSmallSprite
                             );
                           }
                           return null;
@@ -72,7 +71,7 @@ class TarefasScreen extends ConsumerWidget{
             )
           )
         ],
-      )
+      
     );
   }
 }

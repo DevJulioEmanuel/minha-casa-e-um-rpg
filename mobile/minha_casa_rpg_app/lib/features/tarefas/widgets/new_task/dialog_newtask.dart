@@ -4,6 +4,7 @@ import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_descricao.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_nivel.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/step_tipo.dart';
+import 'package:minha_casa_rpg_app/shared/enum/nivel_tarefa.dart';
 import 'package:minha_casa_rpg_app/shared/enum/tipo_tarefa.dart';
 
 class DialogNewtask extends StatefulWidget {
@@ -18,7 +19,7 @@ class _DialogNewtask extends State<DialogNewtask> {
 
   String descricao = "";
   TipoTarefa tipo = TipoTarefa.pontual;
-  String nivel = "";
+  NivelTarefa nivel = NivelTarefa.facil;
   DateTime data = DateTime.now();
   
   void next() => setState(() => step++);
