@@ -1,36 +1,34 @@
-import 'dart:convert';
-
-import 'package:minha_casa_rpg_app/core/network/http_client.dart';
+import 'package:dio/dio.dart';
+import 'package:minha_casa_rpg_app/core/network/dio_client.dart';
 
 class AuthService {
   Future<Map<String, dynamic>> register(String email, String password) async {
-    final response = await HttpClient.post(
-      "/user",
-      {
-        "email": email,
-        "password": password,
-      },
-    );
-
-    if (response.statusCode != 201) {
-      throw Exception("Erro ao cadastrar");
+    try {
+      final response = await DioClient.dio.post (
+        "/user",
+        data: {
+          "email": email,
+          "password": password,
+        },
+      );
+      return response.data;
+    } on DioException catch (e) {
+      throw Exception(e.response?.data?? "Erro ao cadastrar");
     }
-
-    return jsonDecode(response.body);
   }
 
   Future<Map<String, dynamic>> login(String email, String password) async {
-    final response = await HttpClient.post(
-      "/user",
-      {
-        "email": email,
-        "password": password,
-      },
-    );
-
-    if (response.statusCode != 200) {
-      throw Exception("Email ou senha inválidos");
+    try {
+      final response = await DioClient.dio.post (
+        "/user",
+        data: {
+          "email": email,
+          "password": password,
+        },
+      );
+      return response.data;
+    } on DioException catch (e) {
+      throw Exception(e.response?.data?? "Erro ao logar");
     }
-    return jsonDecode(response.body);
   }
 }
