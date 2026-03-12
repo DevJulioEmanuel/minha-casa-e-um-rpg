@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:minha_casa_rpg_app/db_fake/tarefas_modelfake.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/provider/tarefas_provider.dart';
 import 'package:minha_casa_rpg_app/features/tarefas/widgets/card_tasks/buttom_bottomsheets.dart';
 import 'package:minha_casa_rpg_app/shared/enum/nivel_tarefa.dart';
@@ -103,7 +102,7 @@ class _DialogEditTaskState extends ConsumerState<DialogEditTask> {
               children: [
                 Expanded(
                   child: DropdownButtonFormField<NivelTarefa>(
-                    value: nivelSelecionado,
+                    initialValue: nivelSelecionado,
                     items: NivelTarefa.values.map((nivel) {
                       return DropdownMenuItem(
                         value: nivel,

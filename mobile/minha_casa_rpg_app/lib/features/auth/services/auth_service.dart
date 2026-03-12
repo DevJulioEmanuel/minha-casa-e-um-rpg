@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:minha_casa_rpg_app/core/network/dio_client.dart';
+import 'package:minha_casa_rpg_app/core/storage/token_storage.dart';
 
 class AuthService {
-  Future<Map<String, dynamic>> register(String email, String password) async {
+  Future<void> register(String email, String password) async {
     try {
       final response = await DioClient.dio.post (
         "/user",
@@ -11,13 +12,14 @@ class AuthService {
           "password": password,
         },
       );
-      return response.data;
+      final token = response.data["token"];
+      await TokenStorage.saveToken(token);
     } on DioException catch (e) {
       throw Exception(e.response?.data?? "Erro ao cadastrar");
     }
   }
 
-  Future<Map<String, dynamic>> login(String email, String password) async {
+  Future<void> login(String email, String password) async {
     try {
       final response = await DioClient.dio.post (
         "/user",
@@ -26,7 +28,8 @@ class AuthService {
           "password": password,
         },
       );
-      return response.data;
+      final token = response.data["token"];
+      await TokenStorage.saveToken(token);
     } on DioException catch (e) {
       throw Exception(e.response?.data?? "Erro ao logar");
     }

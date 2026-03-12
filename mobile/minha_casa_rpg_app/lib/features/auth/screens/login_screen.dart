@@ -51,20 +51,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     final authState = ref.watch(authControllerProvider);
     final heightScreen = MediaQuery.of(context).size.height;
 
-    ref.listen(authControllerProvider, (previous, next) {
-      next.whenOrNull(
-        data: (user) {
-          if (user!=null) {
-            context.go('/republica');
-          }
-        },
-        error: (error, stack) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(error.toString()))
-          );
-        }
-      );
-    });
+
     
     return Scaffold(
       body: Stack(
