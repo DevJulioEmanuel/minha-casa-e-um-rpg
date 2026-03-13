@@ -36,14 +36,8 @@ class OnboardingProvider extends StateNotifier<OnboardingState> {
     state = state.copyWith(codigoRepublica: codigo);
   }
 
-  Future <bool> criarUsuario() async {
-    final response = await remote.criarUsuario(state);
-    if (response) {
-      return true;
-    } else {
-      return false;
-    }
- 
+  Future <void> criarUsuario() async {
+    await remote.criarUsuario(state);
   }
   Future <void> criarRepublica() async {
     await remote.criarRepublica(state);
