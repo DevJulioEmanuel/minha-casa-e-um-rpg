@@ -29,9 +29,7 @@ public class UserService {
         return repository.save(user);
     }
 
-    public User completedProfile(UUID id, UserAvatarDTO dto){
-        User user = repository.findById(id).orElseThrow(() -> new RegistroNaoEncontradoException("Usuário não encontrado"));
-
+    public User completedProfile(User user, UserAvatarDTO dto){
         user.setName(dto.name());
         user.setAvatar(dto.avatar());
         user.setColor(dto.color());
@@ -39,9 +37,7 @@ public class UserService {
         return repository.save(user);
     }
 
-    public User joinRepublic(UUID id, String inviteCode){
-        User user = repository.findById(id).orElseThrow(() -> new RegistroNaoEncontradoException("Usuário não encontrado"));
-
+    public User joinRepublic(User user, String inviteCode){
         if (user.getRepublic() != null) {
             throw new RegistroDuplicadoException("Usuário já pertence a uma república");
         }
