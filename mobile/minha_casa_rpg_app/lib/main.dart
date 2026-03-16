@@ -70,7 +70,7 @@ class MyApp extends ConsumerWidget {
           //brightness: brightness, 
           primary: Color(0xFF7CA391), 
           //onPrimary: onPrimary,   
-          secondary: Color(0xFF153968), 
+          secondary: Color.fromARGB(255, 0, 0, 0), 
           //onSecondary: onSecondary, 
           error: Color.fromARGB(255, 255, 124, 124), 
           onError: Color(0xFF77B882), 

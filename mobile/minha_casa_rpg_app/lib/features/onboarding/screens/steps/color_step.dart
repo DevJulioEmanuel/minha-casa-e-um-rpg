@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:minha_casa_rpg_app/core/design/backgrounds.dart';
+import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 import 'package:minha_casa_rpg_app/shared/enum/avatar_size.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/color_repository.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
@@ -15,11 +17,13 @@ class ColorStep extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final onboarding = ref.watch(onboardingProvider);
+    final background = Backgrounds.backgroundCasas.label;
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset('assets/images/panteao_grego.png',
+            child: Image.asset(background,
             fit: BoxFit.cover,
             ) 
           ),
@@ -40,11 +44,11 @@ class ColorStep extends ConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         spacing: 16,
                         children: [
-                          Text("Escolha sua essência!",
+                          Text(l10n.chooseEssence,
                           style: Theme.of(context).textTheme.titleLarge,
                           textAlign: TextAlign.center,
                           ),
-                          Text("As cores dizem muito sobre você.",
+                          Text(l10n.colorsSayAboutYou,
                           style: Theme.of(context).textTheme.bodyMedium,
                           textAlign: TextAlign.center,
                           ),
@@ -81,8 +85,8 @@ class ColorStep extends ConsumerWidget {
                               );
                             }).toList(),
                           ),
-                          RpgStepButtom(texto: "PRÓXIMO", function: onNext),
-                          RpgStepButtom(texto: "VOLTAR", function: onPrevious, color: Theme.of(context).colorScheme.error)
+                          RpgStepButtom(texto: l10n.next, function: onNext),
+                          RpgStepButtom(texto: l10n.back, function: onPrevious, color: Theme.of(context).colorScheme.error)
                         ],
                       ),
                     ),

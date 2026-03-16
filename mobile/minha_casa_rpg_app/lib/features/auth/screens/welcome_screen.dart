@@ -12,7 +12,7 @@ class WelcomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(  
-            child: Image.asset('assets/images/background_pixelart_3.png',   
+            child: Image.asset('assets/images/background_pixelart_4.png',   
             filterQuality: FilterQuality.none,
             fit: BoxFit.cover,
             )

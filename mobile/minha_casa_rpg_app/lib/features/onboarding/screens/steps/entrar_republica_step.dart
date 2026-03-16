@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:minha_casa_rpg_app/core/design/backgrounds.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/textfield_name.dart';
+import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class EntrarRepublicaStep extends ConsumerWidget {
@@ -11,12 +13,15 @@ class EntrarRepublicaStep extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final background = Backgrounds.backgroundCasas.label;
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset('assets/images/panteao_grego.png',
+            child: Image.asset(background,
             fit: BoxFit.cover,
+            filterQuality: FilterQuality.none,
             ) 
           ),
           Positioned.fill(
@@ -35,16 +40,16 @@ class EntrarRepublicaStep extends ConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       spacing: 24,
                       children: [
-                        Text("Juntar-se a uma República",
+                        Text(l10n.joinHouseTitle,
                         style: Theme.of(context).textTheme.titleLarge,
                         textAlign: TextAlign.center,
                         ),
-                        Text("Alguém te enviou um código? Use-o para entrar e começar sua jornada.",
+                        Text(l10n.joinHouseDescription,
                         style: Theme.of(context).textTheme.bodyMedium,
                         textAlign: TextAlign.center,
                         ),
-                        TextfieldName(label: "Código da república", controller: codigocontroller),
-                        RpgStepButtom(texto: "JUNTAR-SE", function: () async {
+                        TextfieldName(label: l10n.houseCode, controller: codigocontroller),
+                        RpgStepButtom(texto: l10n.join, function: () async {
                           ref.read(onboardingProvider.notifier).setCodigoRepublica(codigocontroller.text);
                           await ref.read(onboardingProvider.notifier).entrarRepublica();
                         }),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:minha_casa_rpg_app/core/design/backgrounds.dart';
+import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 import 'package:minha_casa_rpg_app/shared/enum/avatar_size.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/avatar_view_onboarding.dart';
@@ -12,12 +14,15 @@ class ConfirmStep extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final onboarding = ref.watch(onboardingProvider);
+    final background = Backgrounds.backgroundCasas.label;
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset('assets/images/panteao_grego.png',
+            child: Image.asset(background,
             fit: BoxFit.cover,
+            filterQuality: FilterQuality.none,
             ) 
           ),
           Positioned.fill(
@@ -37,7 +42,7 @@ class ConfirmStep extends ConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         spacing: 18,
                         children: [
-                          Text("Deseja concluir seu guerreiro?",
+                          Text(l10n.finishWarriorQuestion,
                           style: Theme.of(context).textTheme.titleLarge,
                           textAlign: TextAlign.center,
                           ),
@@ -47,19 +52,18 @@ class ConfirmStep extends ConsumerWidget {
                           ),
                           AvatarViewOnboarding(path: onboarding.avatar!.imagePath, avatarSize: AvatarSize.big, cor: onboarding.cor!.color),
                           SizedBox(height: 8),
-                          RpgStepButtom(texto: "CONCLUIR", function: () async {
+                          RpgStepButtom(texto: l10n.finish, function: () async {
                             try {
                               await ref.read(onboardingProvider.notifier).criarUsuario();
                               onNext();
                             } catch (e) {
                               if (!context.mounted) return;
-                              
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(content: Text(e.toString()))
                               );
                             }
                             }),
-                          RpgStepButtom(texto: "VOLTAR", function: onPrevious, color: Theme.of(context).colorScheme.error)
+                          RpgStepButtom(texto: l10n.back, function: onPrevious, color: Theme.of(context).colorScheme.error)
                         ],
                       ),
                     ),

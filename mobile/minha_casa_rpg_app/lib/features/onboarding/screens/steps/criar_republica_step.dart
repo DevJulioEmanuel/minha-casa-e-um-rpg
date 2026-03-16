@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:minha_casa_rpg_app/core/design/backgrounds.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/textfield_name.dart';
+import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class CriarRepublicaStep extends ConsumerWidget {
@@ -11,12 +13,15 @@ class CriarRepublicaStep extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final background = Backgrounds.backgroundCasas.label;
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset('assets/images/panteao_grego.png',
+            child: Image.asset(background,
             fit: BoxFit.cover,
+            filterQuality: FilterQuality.none,
             ) 
           ),
           Positioned.fill(
@@ -35,16 +40,16 @@ class CriarRepublicaStep extends ConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       spacing: 24,
                       children: [
-                        Text("Fundar uma nova República",
+                        Text(l10n.foundHouseTitle,
                         style: Theme.of(context).textTheme.titleLarge,
                         textAlign: TextAlign.center,
                         ),
-                        Text("Define o nome. Toda grande história começa com alguém que decidiu dar o primeiro passo.",
+                        Text(l10n.foundHouseDescription,
                         style: Theme.of(context).textTheme.bodyMedium,
                         textAlign: TextAlign.center,
                         ),
-                        TextfieldName(label: "Nome da república", controller: nomeRepublicacontroller),
-                        RpgStepButtom(texto: "CRIAR", function: () async {
+                        TextfieldName(label: l10n.houseName, controller: nomeRepublicacontroller),
+                        RpgStepButtom(texto: l10n.create, function: () async {
                           ref.read(
                             onboardingProvider.notifier
                           ).setNomeRepublica(nomeRepublicacontroller.text);

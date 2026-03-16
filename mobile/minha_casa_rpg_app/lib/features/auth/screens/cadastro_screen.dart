@@ -53,8 +53,9 @@ class _CadastroScreenState extends State<CadastroScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset('assets/images/background_pixelart_3.png',
+            child: Image.asset('assets/images/background_pixelart_4.png',
             fit: BoxFit.cover,
+            filterQuality: FilterQuality.none,
             )
           ),
           Positioned.fill(

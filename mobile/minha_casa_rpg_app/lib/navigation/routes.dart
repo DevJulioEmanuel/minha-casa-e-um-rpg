@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:minha_casa_rpg_app/features/auth/data/models/auth_status.dart';
-import 'package:minha_casa_rpg_app/features/auth/provider/auth_controller.dart';
+//import 'package:minha_casa_rpg_app/features/auth/data/models/auth_status.dart';
+//import 'package:minha_casa_rpg_app/features/auth/provider/auth_controller.dart';
 import 'package:minha_casa_rpg_app/features/despesas/screens/despesas_screen.dart';
 import 'package:minha_casa_rpg_app/features/loja/screens/loja_screen.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/screens/onboarding_screen.dart';
@@ -14,9 +14,10 @@ import 'package:minha_casa_rpg_app/features/auth/screens/welcome_screen.dart';
 import 'package:minha_casa_rpg_app/navigation/main_navigation.dart';
 
 final routesProvider = Provider<GoRouter>((ref) {
-  final authState = ref.watch(authControllerProvider);
+  //final authState = ref.watch(authControllerProvider);
   return GoRouter(
-    initialLocation: '/welcome',
+    initialLocation: '/onboarding',
+    /*
     redirect: (context, state) {
       final status = authState.value;
       final loggedIn = status == AuthStatus.authenticated;
@@ -29,7 +30,8 @@ final routesProvider = Provider<GoRouter>((ref) {
         return "/republica";
       }
       return null;
-    },
+      
+    },*/
     routes: [
       GoRoute(
         path: '/welcome',

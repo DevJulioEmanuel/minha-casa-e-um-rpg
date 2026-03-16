@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:minha_casa_rpg_app/core/design/backgrounds.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_provider.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/widgets/textfield_name.dart';
+import 'package:minha_casa_rpg_app/l10n/app_localizations.dart';
 import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class NameStep extends ConsumerWidget {
@@ -11,12 +13,15 @@ class NameStep extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final background = Backgrounds.backgroundCasas.label;
     return Scaffold(
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset('assets/images/panteao_grego.png',
+            child: Image.asset(background,
             fit: BoxFit.cover,
+            filterQuality: FilterQuality.none,
             ) 
           ),
           Positioned.fill(
@@ -35,24 +40,24 @@ class NameStep extends ConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       spacing: 16,
                       children: [
-                        Text("Bem-vindo ao seu novo capítulo!",
+                        Text(l10n.onboardingTitle,
                         style: Theme.of(context).textTheme.titleLarge,
                         textAlign: TextAlign.center,
                         ),
-                        Text("Antes de entrar na república, precisamos saber como você quer ser conhecido.",
+                        Text(l10n.onboardingSubtitle,
                         style: Theme.of(context).textTheme.bodyMedium,
                         textAlign: TextAlign.center,
                         ),
+                        SizedBox(height: 5),
+                        TextfieldName(label: l10n.warriorName, controller: namecontroller),
                         SizedBox(height: 0),
-                        TextfieldName(label: "Nome do guerreiro", controller: namecontroller),
-                        SizedBox(height: 0),
-                        RpgStepButtom(texto: "PRÓXIMO", function: () { 
+                        RpgStepButtom(texto: l10n.next, function: () { 
                           FocusScope.of(context).unfocus(); 
                           final name = namecontroller.text.trim();
                           if (name.length<3) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text("o nome deve ter no mínimo 3 caracteres.")
+                              SnackBar(
+                                content: Text(l10n.nameError)
                               )
                             );
                             return;
