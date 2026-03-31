@@ -5,14 +5,14 @@ import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_state
 class OnboardingService {
   Future<void> criarUsuario(OnboardingState state) async {
     try {
-      await DioClient.dio.post(
-        "/user/7dcc527d-f823-44f6-a2aa-42bbd3652718/profile",
+      await DioClient.dio.patch(
+        "/profile",
         data: {
           "name": state.nome,
           "avatar": state.avatar!.id,
           "color": state.cor!.id,
-        }
-        );
+        },
+      );
     } on DioException catch (e) {
       throw Exception(e);
     }
@@ -22,9 +22,7 @@ class OnboardingService {
     try {
       await DioClient.dio.post(
         "/republic",
-        data: {
-          "name": state.nomeRepublica
-        }
+        data: {"name": state.nomeRepublica},
       );
     } on DioException catch (e) {
       throw Exception(e);
@@ -34,10 +32,8 @@ class OnboardingService {
   Future<void> entrarRepublica(OnboardingState state) async {
     try {
       await DioClient.dio.patch(
-        "/user/7dcc527d-f823-44f6-a2aa-42bbd3652718/join",
-        data: {
-          "inviteCode": state.codigoRepublica
-        }
+        "/join",
+        data: {"inviteCode": state.codigoRepublica},
       );
     } on DioException catch (e) {
       throw Exception(e);
