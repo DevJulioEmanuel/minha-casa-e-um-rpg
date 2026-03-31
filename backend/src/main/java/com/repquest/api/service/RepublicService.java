@@ -1,7 +1,9 @@
 package com.repquest.api.service;
 
 import com.repquest.api.model.Republic;
+import com.repquest.api.model.User;
 import com.repquest.api.repository.RepublicRepository;
+import com.repquest.api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,20 +14,23 @@ import java.util.UUID;
 public class RepublicService {
 
     private final RepublicRepository repository;
+    private final UserRepository userRepository;
 
-    public Republic create(Republic republic){
+    public Republic create(Republic republic, User user){
         republic.setInviteCode(generateUniqueInviteCode());
+        Republic savedRepublic = repository.save(republic);
 
-        return repository.save(republic);
+        user.setRepublic(savedRepublic);
+        userRepository.save(user);
+
+        return savedRepublic;
     }
 
     private String generateUniqueInviteCode(){
         String code;
-        boolean exists;
         do {
             code = UUID.randomUUID().toString().substring(0, 6).toUpperCase();
-            exists = repository.existsByInviteCode(code);
-        } while (exists);
+        } while (repository.existsByInviteCode(code));
         return code;
     }
 
