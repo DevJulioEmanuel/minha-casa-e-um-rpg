@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/home/julioemauel/Documentos/flutter
-FLUTTER_APPLICATION_PATH=/home/julioemauel/republica-quest/mobile/minha_casa_rpg_app
+FLUTTER_ROOT=/home/julioemanuel/flutter
+FLUTTER_APPLICATION_PATH=/home/julioemanuel/dev/projetos/minha-casa-e-um-rpg/mobile/minha_casa_rpg_app
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_TARGET=lib/main.dart
 FLUTTER_BUILD_DIR=build

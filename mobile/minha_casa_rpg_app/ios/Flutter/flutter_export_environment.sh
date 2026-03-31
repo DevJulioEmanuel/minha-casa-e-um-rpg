@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/home/julioemauel/Documentos/flutter"
-export "FLUTTER_APPLICATION_PATH=/home/julioemauel/republica-quest/mobile/minha_casa_rpg_app"
+export "FLUTTER_ROOT=/home/julioemanuel/flutter"
+export "FLUTTER_APPLICATION_PATH=/home/julioemanuel/dev/projetos/minha-casa-e-um-rpg/mobile/minha_casa_rpg_app"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
