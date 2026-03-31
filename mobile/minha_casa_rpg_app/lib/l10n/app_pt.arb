@@ -13,5 +13,34 @@
     "tarefasButtomNovaTarefa": "+ NOVA TAREFA",
     "tarefasFiltroPendentes": "PENDENTES",
     "tarefasFiltroAtrasadas": "ATRASADAS",
-    "tarefasFiltroConcluidas": "CONCLUIDAS"
+    "tarefasFiltroConcluidas": "CONCLUIDAS",
+
+    "onboardingTitle": "Bem-vindo ao seu novo capítulo!",
+    "onboardingSubtitle": "Antes de entrar na república, precisamos saber como você quer ser conhecido.",
+    "warriorName": "Nome do guerreiro",
+    "nameError": "O nome deve ter no mínimo 3 caracteres.",
+    "next": "PRÓXIMO",
+
+    "chooseAvatar": "Escolha seu avatar!",
+    "avatarIdentity": "Essa será sua identidade dentro da república.",
+    "back": "VOLTAR",
+
+    "chooseEssence": "Escolha sua essência!",
+    "colorsSayAboutYou": "As cores dizem muito sobre você.",
+
+    "finishWarriorQuestion": "Deseja concluir seu guerreiro?",
+    "finish": "CONCLUIR",
+
+    "chooseHouseTitle": "Agora escolha onde vai morar",
+    "chooseHouseSubtitle": "Você pode fundar uma nova república ou entrar em uma já existente.",
+    "create": "CRIAR",
+    "join": "ENTRAR",
+
+    "foundHouseTitle": "Fundar uma nova República",
+    "foundHouseDescription": "Define o nome. Toda grande história começa com alguém que decidiu dar o primeiro passo.",
+    "houseName": "Nome da república",
+
+    "joinHouseTitle": "Juntar-se a uma República",
+    "joinHouseDescription": "Alguém te enviou um código? Use-o para entrar e começar sua jornada.",
+    "houseCode": "Código da república"
 }

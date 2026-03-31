@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/avatares/avatar_size.dart';
-import 'package:minha_casa_rpg_app/features/avatares/avatar_view_onboarding.dart';
+import 'package:minha_casa_rpg_app/shared/enum/avatar_size.dart';
+import 'package:minha_casa_rpg_app/features/avatares/avatar_view.dart';
 
 class AvatarViewOnboarding extends StatelessWidget {
   final AvatarSize avatarSize;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:minha_casa_rpg_app/features/tarefas/widgets/new_task/steps/rpg_step_buttom.dart';
+import 'package:go_router/go_router.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/buttom_no_cor.dart';
+import 'package:minha_casa_rpg_app/shared/widgets/rpg_step_buttom.dart';
 
 class StepDescricao extends StatelessWidget {
   final ValueChanged<String> onNext;
@@ -48,7 +50,17 @@ class StepDescricao extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 24),
-        RpgStepButtom(texto: "Próximo", function: () => onNext(controller.text))
+        RpgStepButtom(texto: "PRÓXIMO", function: () {
+          if (controller.text.trim().length < 5) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("A tarefa deverá ter no mínimo 5 caracteres de descrição."))
+            );
+            return;
+          } 
+          onNext(controller.text);
+        }),
+        SizedBox(height: 18),
+        ButtomNoCor(texto: "CANCELAR", color: Colors.red, function: context.pop)
       ],
     );
   }

@@ -26,7 +26,7 @@ class ButtomNewtask extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage("assets/texture/textura_papel.png") ,
                 fit: BoxFit.cover,
-                opacity: 0.2
+                opacity: 0.95
               ),
             ),
             child: DialogNewtask(),

@@ -3,7 +3,7 @@ import 'package:minha_casa_rpg_app/features/avatares/data/avatar_model.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/avatar_repository.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/color_model.dart';
 import 'package:minha_casa_rpg_app/features/avatares/data/color_repository.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/data/Onboarding_state.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/provider/onboarding_state.dart';
 import 'package:minha_casa_rpg_app/features/onboarding/services/onboarding_service.dart';
 
 final onboardingProvider = StateNotifierProvider<OnboardingProvider, OnboardingState>(
@@ -40,9 +40,9 @@ class OnboardingProvider extends StateNotifier<OnboardingState> {
     await remote.criarUsuario(state);
   }
   Future <void> criarRepublica() async {
-    await remote.CriarRepublica(state);
+    await remote.criarRepublica(state);
   }
   Future <void> entrarRepublica() async {
-    await remote.EntrarRepublica(state);
+    await remote.entrarRepublica(state);
   }
 } 

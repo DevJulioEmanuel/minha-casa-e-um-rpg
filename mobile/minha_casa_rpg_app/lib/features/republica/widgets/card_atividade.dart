@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:minha_casa_rpg_app/shared/enum/avatar_size.dart';
+import 'package:minha_casa_rpg_app/features/avatares/avatar_view.dart';
 
 class CardAtividade extends StatelessWidget {
   final String path;
   final String texto;
   final Color corUsuario;
-  final double scaleImage;
 
   const CardAtividade({
     super.key,
     required this.path,
     required this.texto,
     required this.corUsuario,
-    required this.scaleImage
     });
 
   @override
@@ -24,12 +24,9 @@ class CardAtividade extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
-            Image.asset(
-              path,
-              width: 48 * scaleImage,
-              height: 48 * scaleImage,
-              filterQuality: FilterQuality.none,
-              fit: BoxFit.fill,
+            AvatarView(
+              path: path,
+              avatarSize: AvatarSize.small
             ),
             Expanded(
               child: Text(

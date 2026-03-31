@@ -177,6 +177,138 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'CONCLUIDAS'**
   String get tarefasFiltroConcluidas;
+
+  /// No description provided for @onboardingTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Bem-vindo ao seu novo capítulo!'**
+  String get onboardingTitle;
+
+  /// No description provided for @onboardingSubtitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Antes de entrar na república, precisamos saber como você quer ser conhecido.'**
+  String get onboardingSubtitle;
+
+  /// No description provided for @warriorName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nome do guerreiro'**
+  String get warriorName;
+
+  /// No description provided for @nameError.
+  ///
+  /// In pt, this message translates to:
+  /// **'O nome deve ter no mínimo 3 caracteres.'**
+  String get nameError;
+
+  /// No description provided for @next.
+  ///
+  /// In pt, this message translates to:
+  /// **'PRÓXIMO'**
+  String get next;
+
+  /// No description provided for @chooseAvatar.
+  ///
+  /// In pt, this message translates to:
+  /// **'Escolha seu avatar!'**
+  String get chooseAvatar;
+
+  /// No description provided for @avatarIdentity.
+  ///
+  /// In pt, this message translates to:
+  /// **'Essa será sua identidade dentro da república.'**
+  String get avatarIdentity;
+
+  /// No description provided for @back.
+  ///
+  /// In pt, this message translates to:
+  /// **'VOLTAR'**
+  String get back;
+
+  /// No description provided for @chooseEssence.
+  ///
+  /// In pt, this message translates to:
+  /// **'Escolha sua essência!'**
+  String get chooseEssence;
+
+  /// No description provided for @colorsSayAboutYou.
+  ///
+  /// In pt, this message translates to:
+  /// **'As cores dizem muito sobre você.'**
+  String get colorsSayAboutYou;
+
+  /// No description provided for @finishWarriorQuestion.
+  ///
+  /// In pt, this message translates to:
+  /// **'Deseja concluir seu guerreiro?'**
+  String get finishWarriorQuestion;
+
+  /// No description provided for @finish.
+  ///
+  /// In pt, this message translates to:
+  /// **'CONCLUIR'**
+  String get finish;
+
+  /// No description provided for @chooseHouseTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Agora escolha onde vai morar'**
+  String get chooseHouseTitle;
+
+  /// No description provided for @chooseHouseSubtitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Você pode fundar uma nova república ou entrar em uma já existente.'**
+  String get chooseHouseSubtitle;
+
+  /// No description provided for @create.
+  ///
+  /// In pt, this message translates to:
+  /// **'CRIAR'**
+  String get create;
+
+  /// No description provided for @join.
+  ///
+  /// In pt, this message translates to:
+  /// **'ENTRAR'**
+  String get join;
+
+  /// No description provided for @foundHouseTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Fundar uma nova República'**
+  String get foundHouseTitle;
+
+  /// No description provided for @foundHouseDescription.
+  ///
+  /// In pt, this message translates to:
+  /// **'Define o nome. Toda grande história começa com alguém que decidiu dar o primeiro passo.'**
+  String get foundHouseDescription;
+
+  /// No description provided for @houseName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nome da república'**
+  String get houseName;
+
+  /// No description provided for @joinHouseTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Juntar-se a uma República'**
+  String get joinHouseTitle;
+
+  /// No description provided for @joinHouseDescription.
+  ///
+  /// In pt, this message translates to:
+  /// **'Alguém te enviou um código? Use-o para entrar e começar sua jornada.'**
+  String get joinHouseDescription;
+
+  /// No description provided for @houseCode.
+  ///
+  /// In pt, this message translates to:
+  /// **'Código da república'**
+  String get houseCode;
 }
 
 class _AppLocalizationsDelegate

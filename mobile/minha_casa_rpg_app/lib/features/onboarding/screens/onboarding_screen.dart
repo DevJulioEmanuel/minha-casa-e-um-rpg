@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/steps/avatar_step.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/steps/color_step.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/steps/confirm_step.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/steps/criar_republica_step.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/steps/entrar_republica_step.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/steps/name_step.dart';
-import 'package:minha_casa_rpg_app/features/onboarding/steps/republica_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/screens/steps/avatar_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/screens/steps/color_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/screens/steps/confirm_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/screens/steps/criar_republica_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/screens/steps/entrar_republica_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/screens/steps/name_step.dart';
+import 'package:minha_casa_rpg_app/features/onboarding/screens/steps/republica_step.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});

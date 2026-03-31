@@ -13,6 +13,34 @@
     "tarefasButtomNovaTarefa": "+ NUEVA TAREA",
     "tarefasFiltroPendentes": "PENDIENTES",
     "tarefasFiltroAtrasadas": "ATRASADAS",
-    "tarefasFiltroConcluidas": "CONCLUIDAS"
+    "tarefasFiltroConcluidas": "CONCLUIDAS",
 
+    "onboardingTitle": "¡Bienvenido a tu nuevo capítulo!",
+    "onboardingSubtitle": "Antes de entrar a la casa, necesitamos saber cómo quieres que te llamen.",
+    "warriorName": "Nombre del guerrero",
+    "nameError": "El nombre debe tener al menos 3 caracteres.",
+    "next": "SIGUIENTE",
+
+    "chooseAvatar": "¡Elige tu avatar!",
+    "avatarIdentity": "Esta será tu identidad dentro de la casa.",
+    "back": "ATRÁS",
+
+    "chooseEssence": "¡Elige tu esencia!",
+    "colorsSayAboutYou": "Los colores dicen mucho sobre quién eres.",
+
+    "finishWarriorQuestion": "¿Quieres terminar de crear tu guerrero?",
+    "finish": "FINALIZAR",
+
+    "chooseHouseTitle": "Ahora elige dónde vas a vivir",
+    "chooseHouseSubtitle": "Puedes fundar una nueva casa o unirte a una ya existente.",
+    "create": "CREAR",
+    "join": "UNIRSE",
+
+    "foundHouseTitle": "Fundar una nueva casa",
+    "foundHouseDescription": "Elige un nombre. Toda gran historia comienza con alguien que decidió dar el primer paso.",
+    "houseName": "Nombre de la casa",
+
+    "joinHouseTitle": "Unirse a una casa",
+    "joinHouseDescription": "¿Alguien te envió un código? Úsalo para unirte y comenzar tu viaje.",
+    "houseCode": "Código de la casa"
 }

@@ -12,7 +12,35 @@
     "tarefasTitle": "TASKS",
     "tarefasButtomNovaTarefa": "+ NEW TASK",
     "tarefasFiltroPendentes": "PENDING",
-    "tarefasFiltroAtrasadas": "OVERDUE",
-    "tarefasFiltroConcluidas": "COMPLETED"
+    "tarefasFiltroAtrasadas": "EXPIRED",
+    "tarefasFiltroConcluidas": "COMPLETED",
 
+    "onboardingTitle": "Welcome to your new chapter!",
+    "onboardingSubtitle": "Before joining the house, we need to know what you'd like to be called.",
+    "warriorName": "Warrior name",
+    "nameError": "The name must have at least 3 characters.",
+    "next": "NEXT",
+
+    "chooseAvatar": "Choose your avatar!",
+    "avatarIdentity": "This will be your identity inside the house.",
+    "back": "BACK",
+
+    "chooseEssence": "Choose your essence!",
+    "colorsSayAboutYou": "Colors say a lot about who you are.",
+
+    "finishWarriorQuestion": "Do you want to finish creating your warrior?",
+    "finish": "FINISH",
+
+    "chooseHouseTitle": "Now choose where you will live",
+    "chooseHouseSubtitle": "You can found a new house or join an existing one.",
+    "create": "CREATE",
+    "join": "JOIN",
+
+    "foundHouseTitle": "Found a new house",
+    "foundHouseDescription": "Choose a name. Every great story begins with someone who decided to take the first step.",
+    "houseName": "House name",
+
+    "joinHouseTitle": "Join a house",
+    "joinHouseDescription": "Did someone send you a code? Use it to join and begin your journey.",
+    "houseCode": "House code"
 }

@@ -24,21 +24,23 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
+    final router = ref.watch(routesProvider);
+
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Minha Casa RPG',
       theme: ThemeData(
         useMaterial3: true,
-        
-        fontFamily: 'Cinzel',
+        fontFamily: 'Dalek',
         textTheme: const TextTheme(
           headlineLarge: TextStyle(
-            fontFamily: 'Cinzel_Decorative',
+            fontFamily: 'Dalek',
             fontSize: 42,
             fontWeight: FontWeight.w700,
             color: Color(0xFF153968),
@@ -56,19 +58,19 @@ class MyApp extends StatelessWidget {
             fontSize: 18,
           ),
           bodyMedium: TextStyle(
-            fontSize: 16,
+            fontSize: 20,
           ),
           bodySmall: TextStyle(
             fontSize: 13,
           ),
         ).apply(
-          bodyColor: Color(0xFF153968)
+          bodyColor: Color.fromARGB(255, 0, 0, 0)
         ),
         colorScheme: const ColorScheme.light(
           //brightness: brightness, 
-          primary: Color(0xFF77B882), 
+          primary: Color(0xFF7CA391), 
           //onPrimary: onPrimary,   
-          secondary: Color(0xFF153968), 
+          secondary: Color.fromARGB(255, 0, 0, 0), 
           //onSecondary: onSecondary, 
           error: Color.fromARGB(255, 255, 124, 124), 
           onError: Color(0xFF77B882), 
@@ -79,7 +81,8 @@ class MyApp extends StatelessWidget {
             dragHandleColor: Color(0xFF153968)  
         )
       ),
-      routerConfig: routes,
+      
+      routerConfig: router,
 
       localizationsDelegates: const [
         AppLocalizations.delegate,
