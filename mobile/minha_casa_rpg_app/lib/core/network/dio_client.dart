@@ -5,10 +5,13 @@ class DioClient {
   static final Dio dio =
       Dio(
           BaseOptions(
-            baseUrl: "http://10.10.248.209:8080",
+            baseUrl: "https://clarita-prenasal-akilah.ngrok-free.dev",
             connectTimeout: Duration(seconds: 5),
             receiveTimeout: Duration(seconds: 5),
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+              'Content-Type': 'application/json',
+              'ngrok-skip-browser-warning': '69420',
+            },
           ),
         )
         ..interceptors.add(
@@ -16,8 +19,7 @@ class DioClient {
             onRequest: (options, handler) async {
               final token = await TokenStorage.getToken();
               if (token != null) {
-                options.headers["Authorization"] =
-                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyZXBxdWVzdCIsInN1YiI6Imp1bGlvZW1hbnVlbDEwMEBnbWFpbC5jb20iLCJleHAiOjE3NzQ5ODA2MTJ9.gqfbPXvbmSA5reAHt2-H04Ycg_SJxq9KAoFleup0Xqg";
+                options.headers["Authorization"] = "Bearer $token";
               }
               handler.next(options);
             },

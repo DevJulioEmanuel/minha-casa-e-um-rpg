@@ -6,7 +6,7 @@ class OnboardingService {
   Future<void> criarUsuario(OnboardingState state) async {
     try {
       await DioClient.dio.patch(
-        "/profile",
+        "/user/profile",
         data: {
           "name": state.nome,
           "avatar": state.avatar!.id,
@@ -32,7 +32,7 @@ class OnboardingService {
   Future<void> entrarRepublica(OnboardingState state) async {
     try {
       await DioClient.dio.patch(
-        "/join",
+        "/user/join/",
         data: {"inviteCode": state.codigoRepublica},
       );
     } on DioException catch (e) {
