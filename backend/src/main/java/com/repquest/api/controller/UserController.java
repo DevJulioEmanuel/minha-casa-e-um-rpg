@@ -1,6 +1,5 @@
 package com.repquest.api.controller;
 
-import com.repquest.api.dto.JoinRequestDTO;
 import com.repquest.api.dto.UserAvatarDTO;
 import com.repquest.api.dto.UserDTO;
 import com.repquest.api.dto.UserResponseDTO;
@@ -9,13 +8,11 @@ import com.repquest.api.model.User;
 import com.repquest.api.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.mapstruct.control.MappingControl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("user")
