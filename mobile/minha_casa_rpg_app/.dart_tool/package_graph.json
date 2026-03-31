@@ -663,11 +663,6 @@
       ]
     },
     {
-      "name": "vm_service",
-      "version": "15.0.2",
-      "dependencies": []
-    },
-    {
       "name": "test",
       "version": "1.30.0",
       "dependencies": [
@@ -699,6 +694,18 @@
       ]
     },
     {
+      "name": "vm_service",
+      "version": "15.0.2",
+      "dependencies": []
+    },
+    {
+      "name": "webkit_inspection_protocol",
+      "version": "1.2.1",
+      "dependencies": [
+        "logging"
+      ]
+    },
+    {
       "name": "test_core",
       "version": "0.6.16",
       "dependencies": [
@@ -723,13 +730,6 @@
         "test_api",
         "vm_service",
         "yaml"
-      ]
-    },
-    {
-      "name": "webkit_inspection_protocol",
-      "version": "1.2.1",
-      "dependencies": [
-        "logging"
       ]
     },
     {
